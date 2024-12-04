@@ -7,6 +7,9 @@ void main() {
   runApp(const MyApp());
 }
 
+
+
+//established connection to new branch
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
