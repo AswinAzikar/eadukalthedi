@@ -3,6 +3,7 @@ import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:flutter/material.dart';
 
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -71,6 +72,7 @@ class _SplashScreenState extends State<SplashScreen>
               ),
             );
           },
+          
           child: Hero(
             tag: 'logo',
             child: Padding(
