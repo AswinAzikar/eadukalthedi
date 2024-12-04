@@ -1,7 +1,7 @@
 import 'package:eadukalthedi/gen/assets.gen.dart';
+import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -34,6 +34,18 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _controller.forward();
+
+    _controller.addStatusListener(
+      (status) async {
+        if (status == AnimationStatus.completed) {
+          await Future.delayed(const Duration(seconds: 1));
+
+          if (mounted) {
+            Navigator.pushNamed(context, AppRoutes.authScreen);
+          }
+        }
+      },
+    );
   }
 
   @override
@@ -45,16 +57,8 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-        ),
-        toolbarHeight: 0,
-        elevation: 0,
-      ),
+      appBar: AppBar(),
       body: Center(
         child: AnimatedBuilder(
           animation: _controller,
@@ -67,9 +71,12 @@ class _SplashScreenState extends State<SplashScreen>
               ),
             );
           },
-          child: Padding(
-            padding: const EdgeInsets.all(paddingXL),
-            child: Image.asset(Assets.pngs.logo.path),
+          child: Hero(
+            tag: 'logo',
+            child: Padding(
+              padding: const EdgeInsets.all(paddingXL),
+              child: Image.asset(Assets.pngs.logo.path),
+            ),
           ),
         ),
       ),
