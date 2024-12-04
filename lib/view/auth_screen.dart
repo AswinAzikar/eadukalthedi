@@ -36,18 +36,12 @@ class _AuthScreenState extends State<AuthScreen> {
               children: [
                 Image.asset(
                   Assets.pngs.logo.path,
-                  width: SizeUtils.width / 1.5,
+                  width: SizeUtils.width /1.5,
                 ),
               ],
             ),
           ),
           gapLarge,
-
-
-
-//aswin
-
-          
         ],
       ),
     );
