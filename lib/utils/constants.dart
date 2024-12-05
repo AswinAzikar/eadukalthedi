@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:logger/logger.dart';
 
-
 delayed({Duration duration = const Duration(seconds: 2)}) async {
   return await Future.delayed(duration);
 }
@@ -22,9 +21,9 @@ final gapXXL = Gap(paddingXXL.h);
 final gapSmall = Gap(paddingSmall.h);
 final gapTiny = Gap(paddingTiny.h);
 
-const Color splashScreenColor = Colors.white;
-const Color darkGreyColor = Color(0xff343947);
-const Color greyBorder = Color(0xFFE5E5EA);
+Color greenTemp = const Color(0xff379777);
+Color offwhite = const Color(0xffF5F7F8);
+const Color greyBorder = Color(0xFFA3A5A7);
 // const Color primaryColor = Color(0xff9D696A);
 
 const Color primaryColor = Color(0xff6b45bc);

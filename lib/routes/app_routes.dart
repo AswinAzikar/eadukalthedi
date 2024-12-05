@@ -1,4 +1,4 @@
-import 'package:eadukalthedi/view/auth_screen.dart';
+import 'package:eadukalthedi/view/auth_screen/auth_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../view/splash_screen.dart';

@@ -22,10 +22,21 @@ class $AssetsPngsGen {
   List<AssetGenImage> get values => [logo, specimen];
 }
 
+class $AssetsSvgsGen {
+  const $AssetsSvgsGen();
+
+  /// File path: assets/svgs/google.svg
+  String get google => 'assets/svgs/google.svg';
+
+  /// List of all assets
+  List<String> get values => [google];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsPngsGen pngs = $AssetsPngsGen();
+  static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
 }
 
 class AssetGenImage {

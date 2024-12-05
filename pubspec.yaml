@@ -35,6 +35,7 @@ flutter:
   # Adding assets.
   assets:
     - assets/pngs/
+    - assets/svgs/
 
   # Adding custom fonts.
   fonts:
