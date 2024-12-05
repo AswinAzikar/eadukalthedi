@@ -5,8 +5,6 @@ import '../view/splash_screen.dart';
 
 class AppRoutes {
   static const String splashScreen = '/';
-
-
   static const String authScreen ="/AuthScreen";
 
 
