@@ -6,6 +6,9 @@ class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       appBarTheme: AppBarTheme(
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
         backgroundColor: offwhite,
         elevation: 0,
         toolbarHeight: 0,

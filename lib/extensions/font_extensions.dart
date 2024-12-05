@@ -21,10 +21,13 @@ extension BuildContextExtension on BuildContext {
   TextStyle get poppinsBlack => baseTextStyle('Poppins', FontWeight.w900);
   TextStyle get poppinsLight => baseTextStyle('Poppins', FontWeight.w300);
   TextStyle get poppinsThin => baseTextStyle('Poppins', FontWeight.w100);
+  TextStyle get poppinsSemiBold => baseTextStyle('Poppins', FontWeight.w600);
 
   TextStyle get poppinsRegular12 => poppinsRegular.copyWith(fontSize: 12);
   TextStyle get poppinsRegular14 => poppinsRegular.copyWith(fontSize: 14);
   TextStyle get poppinsRegular16 => poppinsRegular.copyWith(fontSize: 16);
+  TextStyle get poppinsSemiBold26 => poppinsSemiBold.copyWith(fontSize: 26);
+  TextStyle get poppinsSemiBold12 => poppinsSemiBold.copyWith(fontSize: 12);
   TextStyle get poppinsBold18 => poppinsBold.copyWith(fontSize: 18);
   TextStyle get poppinsBold20 => poppinsBold.copyWith(fontSize: 20);
   TextStyle get poppinsBlack22 => poppinsBlack.copyWith(fontSize: 22);

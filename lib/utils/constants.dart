@@ -23,7 +23,13 @@ final gapTiny = Gap(paddingTiny.h);
 
 Color greenTemp = const Color(0xff379777);
 Color offwhite = const Color(0xffF5F7F8);
+Color headingText = const Color(0xff000000);
+Color miniHeadingText = const Color(0xffA3A5A7);
 const Color greyBorder = Color(0xFFA3A5A7);
+
+// colors of the border
+Color borderStroke = const Color(0xffCCC9C9);
+
 // const Color primaryColor = Color(0xff9D696A);
 
 const Color primaryColor = Color(0xff6b45bc);
