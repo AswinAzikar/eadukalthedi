@@ -1,9 +1,8 @@
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/theme/theme.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
-import 'package:eadukalthedi/view/auth_screen/auth_screen_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
 
 void main() {
   runApp(const MyApp());
