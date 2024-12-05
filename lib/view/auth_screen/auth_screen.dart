@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:eadukalthedi/routes/app_routes.dart';
+import 'package:eadukalthedi/view/auth_screen/auth_screen_controller.dart';
 import 'package:eadukalthedi/view/auth_screen/widgets/terms_and_condition_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,24 +10,16 @@ import 'package:eadukalthedi/gen/assets.gen.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 
 import '../../widgets/common_buton.dart';
 
-class AuthScreen extends StatefulWidget {
+class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
 
   @override
-  State<AuthScreen> createState() => _AuthScreenState();
-}
-
-class _AuthScreenState extends State<AuthScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final providerObj = Provider.of<AuthScreenController>(context);
     return Scaffold(
       body: Column(
         children: [
@@ -51,14 +45,14 @@ class _AuthScreenState extends State<AuthScreen> {
                     ],
                   ),
                 ),
-                gap,
-                Text(
-                  "Create an Account",
-                  style: context.poppinsSemiBold20,
-                ),
                 gapLarge,
                 CommonButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    //TODO in Future implement two navigators logic based on login and create account
+
+                    // first checks if is have an account or not then
+                    await Navigator.pushNamed(context, AppRoutes.welcomeScreen);
+                  },
                   elevated: true,
                   color: Colors.white,
                   child: Row(
@@ -66,29 +60,40 @@ class _AuthScreenState extends State<AuthScreen> {
                     children: [
                       SvgPicture.asset(Assets.svgs.google),
                       gap,
-                      Text(
-                        "Continue with Google",
-                        style: context.poppinsRegular16,
-                      )
+
+                      // check if login or not
+                      providerObj.isLogin
+                          ? Text(
+                              "Login with Google",
+                              style: context.poppinsRegular16,
+                            )
+                          : Text(
+                              "Continue with Google",
+                              style: context.poppinsRegular16,
+                            )
                     ],
                   ),
                 ),
                 gap,
+                gap,
                 GestureDetector(
                   onTap: () {
-                    //TODO : implement the login/Singup logic
+                    // logic to change to login page and create account page
+
+                    providerObj.isLoginPage();
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Have an Account ?",
+                        providerObj.isLogin
+                            ? "Don't have an Account? "
+                            : "Have an Account ? ",
                         style: context.poppinsRegular12
                             .copyWith(color: greyBorder),
                       ),
-                      gap,
                       Text(
-                        "Log In",
+                        providerObj.isLogin ? "Create one" : "Log In",
                         style:
                             context.poppinsRegular12.copyWith(color: greenTemp),
                       )

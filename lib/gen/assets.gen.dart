@@ -28,8 +28,11 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/google.svg
   String get google => 'assets/svgs/google.svg';
 
+  /// File path: assets/svgs/back button.svg
+  String get backButtonIcons => 'assets/svgs/back button.svg';
+
   /// List of all assets
-  List<String> get values => [google];
+  List<String> get values => [google, backButtonIcons];
 }
 
 class Assets {
