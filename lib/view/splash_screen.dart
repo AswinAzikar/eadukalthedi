@@ -1,6 +1,7 @@
 import 'package:eadukalthedi/gen/assets.gen.dart';
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
+import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -73,9 +74,21 @@ class _SplashScreenState extends State<SplashScreen>
           },
           child: Hero(
             tag: 'logo',
-            child: Padding(
+            child: Container(
               padding: const EdgeInsets.all(paddingXL),
-              child: Image.asset(Assets.pngs.logo.path),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    Assets.pngs.specimen.path,
+                    height: SizeUtils.width / 1.3,
+                  ),
+                  Image.asset(
+                    Assets.pngs.logo.path,
+                    width: SizeUtils.width / 1.5,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

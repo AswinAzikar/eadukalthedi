@@ -1,0 +1,16 @@
+[33me42a49e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/aswin[m[33m, [m[1;32maswin[m[33m)[m "Added SVG assets, updated theme and constants, removed auth screen, and modified app routes"
+[33m4ae3ef4[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/abijith[m[33m, [m[1;32mabijith[m[33m)[m "Removed unnecessary line, changed TextTheme to const, and replaced fSize with numeric values in theme.dart; removed unnecessary line in splash_screen.dart"
+[33m78f5894[m Merge pull request #5 from AswinAzikar/abijith
+[33m7556ad2[m Merge pull request #4 from AswinAzikar/master
+[33mf9c4aa5[m Merge pull request #3 from AswinAzikar/aswin
+[33m6f4ea16[m "Removed Poppins font files and updated theme.dart to use Poppins font family, added font assets to pubspec.yaml"
+[33m2359314[m "Updated logo image sizes and layout in AuthScreen and SplashScreen"
+[33m498f080[m Merge pull request #2 from AswinAzikar/aswin
+[33mcc12ecb[m Added a comment in auth_screen.dart and added a blank line in splash_screen.dart.
+[33m87de4e6[m Merge pull request #1 from AswinAzikar/abijith
+[33m0e15e12[m 'Abhijih'
+[33m93d9391[m "Added theme to main app, created auth screen route, and updated splash screen to navigate to auth screen after animation"
+[33mb95e4d2[m "Splash Screen Completed"
+[33ma3dbd99[m "Updated pubspec.lock and pubspec.yaml files with new dependencies and versions."
+[33md3c65f8[m added config
+[33mdd9eb09[m commit level : 0
