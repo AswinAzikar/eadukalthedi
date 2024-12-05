@@ -83,7 +83,7 @@ class _SplashScreenState extends State<SplashScreen>
                     Assets.pngs.specimen.path,
                     height: SizeUtils.width / 1.3,
                   ),
-                    Image.asset(
+                  Image.asset(
                     Assets.pngs.logo.path,
                     width: SizeUtils.width / 1.5,
                   ),
