@@ -3,7 +3,6 @@ import 'package:eadukalthedi/view/splash_screen/splash_screen.dart';
 import 'package:eadukalthedi/view/welcom_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
-
 class AppRoutes {
   static const String splashScreen = '/';
   static const String authScreen = "/AuthScreen";

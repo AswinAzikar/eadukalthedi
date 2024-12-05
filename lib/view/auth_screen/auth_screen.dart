@@ -1,4 +1,3 @@
-
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/view/auth_screen/widgets/terms_and_condition_widget.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +18,11 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  bool isAlreadyExist =
-      true; 
+  bool isAlreadyExist = true;
 
   void toggleLoginPage() {
     setState(() {
-      isAlreadyExist = !isAlreadyExist; 
+      isAlreadyExist = !isAlreadyExist;
     });
   }
 
@@ -57,7 +55,6 @@ class _AuthScreenState extends State<AuthScreen> {
               gapLarge,
               CommonButton(
                 onPressed: () async {
-                  
                   await Navigator.pushNamed(context, AppRoutes.welcomeScreen);
                 },
                 elevated: true,
@@ -67,18 +64,18 @@ class _AuthScreenState extends State<AuthScreen> {
                   children: [
                     SvgPicture.asset(Assets.svgs.google),
                     gap,
-                    
                     Text(
-                      isAlreadyExist ? "Login with Google" : "Continue with Google",
+                      isAlreadyExist
+                          ? "Login with Google"
+                          : "Continue with Google",
                       style: context.poppinsRegular16,
                     )
                   ],
                 ),
               ),
-            gapLarge, 
+              gapLarge,
               GestureDetector(
-                onTap:
-                    toggleLoginPage, 
+                onTap: toggleLoginPage,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
