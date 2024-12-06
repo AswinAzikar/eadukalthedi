@@ -1,5 +1,6 @@
 import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/utils/constants.dart';
+import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -50,29 +51,25 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             gapLarge,
-            gapLarge,
-            gapLarge,
-            gapLarge,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: Container(
-                    height: 48,
-                    decoration: BoxDecoration(
-                      color: greenTemp,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Center(
-                      child: Text(
+                CommonButton(
+                  color: greenTemp,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
                         "Continue",
-                        style: context.poppinsBold.copyWith(color: offwhite),
-                      ),
-                    ),
+                        style:
+                            context.poppinsRegular16.copyWith(color: offwhite),
+                      )
+                    ],
                   ),
+                  onPressed: () {},
                 ),
               ],
-            ),
+            )
           ],
         ),
       ),
