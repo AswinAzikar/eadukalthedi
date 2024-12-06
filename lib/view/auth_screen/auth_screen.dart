@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 73edc3a ("Refactored AuthScreen from StatelessWidget to StatefulWidget, removed Provider and AuthScreenController, and updated UI layout and logic.")
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/view/auth_screen/widgets/terms_and_condition_widget.dart';
 import 'package:flutter/material.dart';
