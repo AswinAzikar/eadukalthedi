@@ -1,8 +1,8 @@
 import 'package:eadukalthedi/view/auth_screen/auth_screen.dart';
+import 'package:eadukalthedi/view/splash_screen/splash_screen.dart';
 import 'package:eadukalthedi/view/welcom_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../view/splash_screen/splash_screen.dart';
 
 class AppRoutes {
   static const String splashScreen = '/';
