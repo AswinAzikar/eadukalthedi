@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
           Icons.arrow_back_ios_new_outlined,
           color: Colors.black,
         ),
-        title: Text("data"),
+        title: const Text("data"),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20.0, right: 20.0),
