@@ -15,23 +15,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => AuthScreenController(),
-        )
-      ],
-      child: MaterialApp(
-        //TODO: implement theme change
-        theme: AppTheme.lightTheme,
-        debugShowCheckedModeBanner: false,
-        onGenerateRoute: AppRoutes.generateRoute,
-        initialRoute: AppRoutes.splashScreen,
-        builder: (context, child) => Sizer(
-            builder: (context, Orientation orientation, DeviceType deviceType) {
-          return child ?? const SizedBox();
-        }),
-      ),
+    return MaterialApp(
+      //TODO: implement theme change
+      theme: AppTheme.lightTheme,
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: AppRoutes.generateRoute,
+      initialRoute: AppRoutes.splashScreen,
+      builder: (context, child) => Sizer(
+          builder: (context, Orientation orientation, DeviceType deviceType) {
+        return child ?? const SizedBox();
+      }),
     );
   }
 }
