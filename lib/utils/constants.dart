@@ -28,6 +28,7 @@ Color headingText = const Color(0xff000000);
 Color miniHeadingText = const Color(0xffA3A5A7);
 const Color greyBorder = Color(0xFFA3A5A7);
 Color contentOffWhite = const Color(0xffEFEFEF);
+Color navBarColor = const Color(0xffFfffff);
 
 // colors of the border
 Color borderStroke = const Color(0xffCCC9C9);

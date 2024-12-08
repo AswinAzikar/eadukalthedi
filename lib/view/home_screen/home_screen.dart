@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         // Set the background color for the Scaffold.
-        backgroundColor: contentOffWhite,
+
         body: DefaultTabController(
           length: 5,
           child: Padding(
@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                 searchAndSort(),
 
                 // List of Categories or Tabs Section
-                TabBar(
+                const TabBar(
                   isScrollable: true,
                   labelColor: Colors.black,
                   unselectedLabelColor: Colors.grey,
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
 
-                Expanded(
+                const Expanded(
                   child: TabBarView(
                     children: [
                       Center(
