@@ -1,4 +1,5 @@
 import 'package:eadukalthedi/view/auth_screen/auth_screen.dart';
+import 'package:eadukalthedi/view/navigation_screen/navigation_screen.dart';
 import 'package:eadukalthedi/view/splash_screen/splash_screen.dart';
 import 'package:eadukalthedi/view/welcom_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ class AppRoutes {
   static const String splashScreen = '/';
   static const String authScreen = "/AuthScreen";
   static const String welcomeScreen = "/WelcomeScreen";
+  static const String navigationScreen = "/NavScreen";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -16,6 +18,9 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const AuthScreen());
       case welcomeScreen:
         return MaterialPageRoute(builder: (_) => const WelcomeScreen());
+
+      case navigationScreen:
+        return MaterialPageRoute(builder: (_) => NavigationScreen());
 
       default:
         return MaterialPageRoute(

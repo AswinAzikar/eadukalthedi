@@ -1,7 +1,12 @@
 import 'package:eadukalthedi/extensions/font_extensions.dart';
+import 'package:eadukalthedi/gen/assets.gen.dart';
+import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
+import 'package:eadukalthedi/utils/log_utils.dart';
+import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -9,67 +14,57 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back_ios_new_outlined,
-          color: Colors.black,
-        ),
-        title: const Text("data"),
-      ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+        padding: EdgeInsets.only(left: 20.h, right: 20.h),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Welcome to the Library",
-              style: context.poppinsSemiBold26.copyWith(color: headingText),
-            ),
-            Text(
-              "Enter your Name for username",
-              style: context.poppinsSemiBold12.copyWith(color: miniHeadingText),
-            ),
-            gapLarge,
-            gapLarge,
-            TextFormField(
-              decoration: InputDecoration(
-                fillColor: offwhite,
-                filled: true,
-                hintText: "Enter your Name",
-                hintStyle: TextStyle(
-                  color: miniHeadingText.withOpacity(0.5),
-                  fontSize: 17,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(
-                    color: borderStroke,
-                    width: 2,
+            SizedBox(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Welcome to the Library",
+                    style: context.poppinsSemiBold26
+                        .copyWith(color: headingText, fontSize: 26.fSize),
                   ),
-                ),
-              ),
-            ),
-            gapLarge,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CommonButton(
-                  color: greenTemp,
-                  child: Row(
+                  Text(
+                    "Enter your Name for username",
+                    style: context.poppinsSemiBold12
+                        .copyWith(color: miniHeadingText, fontSize: 16.fSize),
+                  ),
+                  gapXL,
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Enter your Name",
+                    ),
+                  ),
+                  gapLarge,
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        "Continue",
-                        style:
-                            context.poppinsRegular16.copyWith(color: offwhite),
-                      )
+                      CommonButton(
+                        color: greenTemp,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Continue",
+                              style: context.poppinsRegular16.copyWith(
+                                  color: offwhite, fontSize: 16.fSize),
+                            )
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, AppRoutes.navigationScreen);
+                        },
+                      ),
                     ],
-                  ),
-                  onPressed: () {},
-                ),
-              ],
-            )
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

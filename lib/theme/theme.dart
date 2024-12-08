@@ -5,6 +5,21 @@ import 'package:flutter/services.dart';
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
+      inputDecorationTheme: InputDecorationTheme(
+        fillColor: offwhite,
+        filled: true,
+        hintStyle: TextStyle(
+          color: miniHeadingText.withOpacity(0.5),
+          fontSize: 17,
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: borderStroke,
+            width: 2,
+          ),
+        ),
+      ),
       appBarTheme: AppBarTheme(
         iconTheme: const IconThemeData(
           color: Colors.black,
