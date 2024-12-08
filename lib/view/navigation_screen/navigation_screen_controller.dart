@@ -15,5 +15,6 @@ class NavigationScreenController with ChangeNotifier {
     selectedIndex = index;
     pageController.jumpToPage(index);
     notifyListeners();
+    
   }
 }

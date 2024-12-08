@@ -1,25 +1,44 @@
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
-import 'package:flutter/material.dart';
 
+import 'package:eadukalthedi/view/home_screen/home_screen_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+/// The HomeScreen widget is a stateless widget that displays the home screen of the application.
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Access the HomeScreenController provider to manage state.
+    final providerObj = Provider.of<HomeScreenController>(context);
+
     return Scaffold(
-    
       body: DefaultTabController(
-        length: 5,
+        length: 5, // Number of tabs
         child: Padding(
           padding: const EdgeInsets.only(
               left: paddingLarge, right: paddingLarge, top: paddingLarge),
           child: Column(
             children: [
-              //    appBarSection(),
-              SizedBox(height: .02 * SizeUtils.height),
+              // Placeholder for the app bar section
+              // appBarSection(),
+
+              SizedBox(
+                  height: .02 *
+                      SizeUtils
+                          .height), // Spacing between app bar and search section
+
+              // Search and Sort section
               searchAndSort(),
-              SizedBox(height: .02 * SizeUtils.height),
+
+              SizedBox(
+                  height: .02 *
+                      SizeUtils
+                          .height), // Spacing between search section and tab bar
+
+              // Tab bar for category selection
               TabBar(
                 overlayColor: WidgetStateProperty.resolveWith<Color?>(
                   (states) {
@@ -33,36 +52,20 @@ class HomeScreen extends StatelessWidget {
                     const BorderRadius.all(Radius.circular(paddingXL)),
                 tabAlignment: TabAlignment.start,
                 isScrollable: true,
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.grey,
-                indicatorColor: greenTemp,
-                tabs: const [
-                  Tab(text: "Tab 1"),
-                  Tab(text: "Tab 2"),
-                  Tab(text: "Tab 3"),
-                  Tab(text: "Tab 4"),
-                  Tab(text: "Tab 5"),
-                ],
+                labelColor: Colors.black, // Color for selected tab label
+                unselectedLabelColor:
+                    Colors.grey, // Color for unselected tab labels
+                indicatorColor: greenTemp, // Color for the indicator
+                tabs: providerObj.getCategoryTabs(),
               ),
-              const Expanded(
+
+              // TabBarView to display the content of each tab
+              Expanded(
                 child: TabBarView(
-                  children: [
-                    Center(
-                      child: Text("Content for Tab 1"),
-                    ),
-                    Center(
-                      child: Text("Content for Tab 2"),
-                    ),
-                    Center(
-                      child: Text("Content for Tab 3"),
-                    ),
-                    Center(
-                      child: Text("Content for Tab 4"),
-                    ),
-                    Center(
-                      child: Text("Content for Tab 5"),
-                    ),
-                  ],
+                  children: List.generate(
+                    5,
+                    (index) => providerObj.getCategoryTabPages()[index],
+                  ),
                 ),
               ),
             ],
@@ -72,15 +75,16 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  /// Widget for the search and sort section
   Row searchAndSort() {
     return Row(
       children: [
         Expanded(
           child: TextFormField(
             decoration: InputDecoration(
-              fillColor: pureWhite,
-              filled: true,
-              hintText: "Search here",
+              fillColor: pureWhite, // Background color
+              filled: true, // Whether the field is filled
+              hintText: "Search here", // Placeholder text
               suffixIcon: Icon(
                 Icons.search,
                 size: 0.07 * SizeUtils.width,
@@ -93,7 +97,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        gap,
+        gap, // Spacing between search field and sort button
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(padding),
@@ -108,12 +112,13 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  /// Widget for the app bar section
   Row appBarSection() {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(Icons.menu),
-        Icon(Icons.notifications_active),
+        Icon(Icons.menu), // Menu icon
+        Icon(Icons.notifications_active), // Notifications icon
       ],
     );
   }

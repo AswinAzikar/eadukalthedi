@@ -1,6 +1,7 @@
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/theme/theme.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
+import 'package:eadukalthedi/view/home_screen/home_screen_controller.dart';
 
 import 'package:eadukalthedi/view/navigation_screen/navigation_screen_controller.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
             create: (context) => NavigationScreenController()),
+        ChangeNotifierProvider(
+          create: (context) => HomeScreenController(),
+        )
       ],
       child: MaterialApp(
         //TODO: implement theme change
