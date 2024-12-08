@@ -20,7 +20,7 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const WelcomeScreen());
 
       case navigationScreen:
-        return MaterialPageRoute(builder: (_) => NavigationScreen());
+        return MaterialPageRoute(builder: (_) => const NavigationScreen());
 
       default:
         return MaterialPageRoute(

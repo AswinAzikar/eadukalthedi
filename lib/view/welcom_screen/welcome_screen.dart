@@ -1,12 +1,12 @@
 import 'package:eadukalthedi/extensions/font_extensions.dart';
-import 'package:eadukalthedi/gen/assets.gen.dart';
+
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
-import 'package:eadukalthedi/utils/log_utils.dart';
+
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -35,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   gapXL,
                   TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: "Enter your Name",
                     ),
                   ),
