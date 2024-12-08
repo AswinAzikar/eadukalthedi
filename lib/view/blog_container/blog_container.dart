@@ -1,3 +1,4 @@
+import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class BlogContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 280,
+      height: 300,
       width: 362,
       padding: const EdgeInsets.symmetric(horizontal: 9.0, vertical: 13.0),
       decoration: BoxDecoration(
@@ -30,7 +31,7 @@ class BlogContainer extends StatelessWidget {
           const Text(
             "Please Start Writing Better Git Commits",
             style: TextStyle(
-              fontSize: 17,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
             maxLines: 2, // Maximum number of lines for the title
@@ -84,7 +85,7 @@ class BlogContainer extends StatelessWidget {
           const Text(
             "I recently read a helpful article on Hashnode by Simon Egersand titled Write Git Commit Messages Your Colleagues Will Love, and it inspired me to dive a little deeper into understanding what makes a Git commit read a helpful article on Hashnode by Simon Egersand titled Write Git Commit Messages Your Colleagues Will Love, and it inspired me to dive a little deeper into understanding what makes a Git commit good or bad",
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 13,
               fontWeight: FontWeight.normal,
             ),
             maxLines: 6, // Maximum number of lines for the excerpt
@@ -96,7 +97,8 @@ class BlogContainer extends StatelessWidget {
           // "Read more" button
           GestureDetector(
             onTap: () {
-              // TODO: navigate to blog page
+              // Navigate to the full article when tapped
+              Navigator.pushNamed(context, AppRoutes.blogPageScreen);
             },
             child: Row(
               children: [

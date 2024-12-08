@@ -44,7 +44,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
             color: providerObj.selectedIndex == 1 ? Colors.white : Colors.black,
           ),
           Icon(
-            Icons.favorite_border_outlined,
+            Icons.bookmark_outline,
             size: 30.h,
             color: providerObj.selectedIndex == 2 ? Colors.white : Colors.black,
           ),
