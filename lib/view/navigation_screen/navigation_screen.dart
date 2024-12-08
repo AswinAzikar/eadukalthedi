@@ -23,10 +23,11 @@ class _NavigationScreenState extends State<NavigationScreen> {
     final providerObj = Provider.of<NavigationScreenController>(context);
 
     return Scaffold(
+      drawer: const Drawer(),
       appBar: AppBar(
+        toolbarHeight: 0.1 * SizeUtils.width,
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: offwhite),
       ),
-    
       bottomNavigationBar: CurvedNavigationBar(
         buttonBackgroundColor: greenTemp,
         color: navBarColor,
