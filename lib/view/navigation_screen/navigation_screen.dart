@@ -23,6 +23,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
     final providerObj = Provider.of<NavigationScreenController>(context);
 
     return Scaffold(
+      extendBody: true,
       drawer: const Drawer(),
       appBar: AppBar(
         toolbarHeight: 0.1 * SizeUtils.width,

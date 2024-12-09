@@ -5,40 +5,40 @@ import 'package:eadukalthedi/view/home_screen/home_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-/// The HomeScreen widget is a stateless widget that displays the home screen of the application.
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Access the HomeScreenController provider to manage state.
+    
     final providerObj = Provider.of<HomeScreenController>(context);
 
     return Scaffold(
       body: DefaultTabController(
-        length: 5, // Number of tabs
+        length: 5, 
         child: Padding(
           padding: const EdgeInsets.only(
               left: paddingLarge, right: paddingLarge, top: paddingLarge),
           child: Column(
             children: [
-              // Placeholder for the app bar section
-              // appBarSection(),
+              
+              
 
               SizedBox(
                   height: .02 *
                       SizeUtils
-                          .height), // Spacing between app bar and search section
+                          .height), 
 
-              // Search and Sort section
+              
               searchAndSort(),
 
               SizedBox(
                   height: .02 *
                       SizeUtils
-                          .height), // Spacing between search section and tab bar
+                          .height), 
 
-              // Tab bar for category selection
+              
               TabBar(
                 overlayColor: WidgetStateProperty.resolveWith<Color?>(
                   (states) {
@@ -52,14 +52,14 @@ class HomeScreen extends StatelessWidget {
                     const BorderRadius.all(Radius.circular(paddingXL)),
                 tabAlignment: TabAlignment.start,
                 isScrollable: true,
-                labelColor: Colors.black, // Color for selected tab label
+                labelColor: Colors.black, 
                 unselectedLabelColor:
-                    Colors.grey, // Color for unselected tab labels
-                indicatorColor: greenTemp, // Color for the indicator
+                    Colors.grey, 
+                indicatorColor: greenTemp, 
                 tabs: providerObj.getCategoryTabs(),
               ),
 
-              // TabBarView to display the content of each tab
+              
               Expanded(
                 child: TabBarView(
                   children: List.generate(
@@ -75,16 +75,16 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  /// Widget for the search and sort section
+  
   Row searchAndSort() {
     return Row(
       children: [
         Expanded(
           child: TextFormField(
             decoration: InputDecoration(
-              fillColor: pureWhite, // Background color
-              filled: true, // Whether the field is filled
-              hintText: "Search here", // Placeholder text
+              fillColor: pureWhite, 
+              filled: true, 
+              hintText: "Search here", 
               suffixIcon: Icon(
                 Icons.search,
                 size: 0.07 * SizeUtils.width,
@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        gap, // Spacing between search field and sort button
+        gap, 
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(padding),
@@ -112,13 +112,13 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  /// Widget for the app bar section
+  
   Row appBarSection() {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(Icons.menu), // Menu icon
-        Icon(Icons.notifications_active), // Notifications icon
+        Icon(Icons.menu), 
+        Icon(Icons.notifications_active), 
       ],
     );
   }
