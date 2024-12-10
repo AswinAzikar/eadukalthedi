@@ -1,6 +1,7 @@
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/theme/theme.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
+import 'package:eadukalthedi/view/author_view_screen/auther_view_screen_controller.dart';
 import 'package:eadukalthedi/view/blog_page/blog_page_controller.dart';
 import 'package:eadukalthedi/view/home_screen/home_screen_controller.dart';
 
@@ -28,13 +29,15 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => BlogPageController(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => AuthorViewScreenController(),
+        ),
       ],
       child: MaterialApp(
         //TODO: implement theme change
 
-        
         theme: AppTheme.lightTheme,
-        
+
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRoutes.generateRoute,
         initialRoute: AppRoutes.splashScreen,

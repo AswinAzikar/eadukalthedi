@@ -1,3 +1,4 @@
+import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/view/blog_page/blog_page_controller.dart';
@@ -37,18 +38,34 @@ class BlogPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         // Author's avatar
-                        const CircleAvatar(
-                          backgroundImage: NetworkImage(
-                            "https://images.pexels.com/photos/4992382/pexels-photo-4992382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                        GestureDetector(
+                          onTap: () {
+                            // Navigate to author's profile page
+
+                            Navigator.pushNamed(
+                                context, AppRoutes.authorViewScreen);
+                          },
+                          child: const CircleAvatar(
+                            backgroundImage: NetworkImage(
+                              "https://images.pexels.com/photos/4992382/pexels-photo-4992382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                            ),
+                            radius: 15,
                           ),
-                          radius: 15,
                         ),
                         // Author's name
-                        const Text(
-                          "Travis Aaron Wagner",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
+                        GestureDetector(
+                          onTap: () {
+                            // Navigate to author's profile page
+
+                            Navigator.pushNamed(
+                                context, AppRoutes.authorViewScreen);
+                          },
+                          child: const Text(
+                            "Travis Aaron Wagner",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
                         ),
                         // Publication date
@@ -96,67 +113,90 @@ class BlogPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          const Text(
-                            "10K",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              providerObj.toggleFavoriteSelection();
-                            },
-                            icon: providerObj.isFavoriteSelected
-                                ? const Icon(
-                                    Icons.favorite,
-                                    color: Colors.red,
-                                  )
-                                : const Icon(Icons.favorite_outline),
-                          ),
-                        ],
+                      ActionButton(
+                        isSelected: providerObj.isFavoriteSelected,
+                        iconColor: providerObj.isFavoriteSelected
+                            ? Colors.red
+                            : textBlack,
+                        text: "18K",
+                        icon: providerObj.isFavoriteSelected
+                            ? Icons.favorite
+                            : Icons.favorite_border_outlined,
+                        onTap: () {
+                          providerObj.toggleFavoriteSelection();
+                        },
                       ),
-                      Row(
-                        children: [
-                          const Text(
-                            "20K",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              providerObj.toggleBookmarkSelection();
-                            },
-                            icon: providerObj.isBookmarkSelected
-                                ? Icon(
-                                    Icons.bookmark,
-                                    color: greenTemp,
-                                  )
-                                : const Icon(Icons.bookmark_outline),
-                          ),
-                        ],
+                      ActionButton(
+                        isSelected: providerObj.isBookmarkSelected,
+                        iconColor: providerObj.isBookmarkSelected
+                            ? greenTemp
+                            : textBlack,
+                        text: "8K",
+                        icon: providerObj.isBookmarkSelected
+                            ? Icons.bookmark
+                            : Icons.bookmark_outline,
+                        onTap: () {
+                          providerObj.toggleBookmarkSelection();
+                        },
                       ),
-                      Row(
-                        children: [
-                          const Text(
-                            "15K",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.share_outlined),
-                          ),
-                        ],
+                      ActionButton(
+                        text: "50K",
+                        icon: Icons.remove_red_eye_outlined,
+                        onTap: () {},
+                      ),
+                      ActionButton(
+                        text: "5K",
+                        icon: Icons.share_outlined,
+                        onTap: () {
+                          // TODO logic to share blog
+                        },
                       ),
                     ],
                   ),
                 ),
               )
             ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Action Button Logic
+
+class ActionButton extends StatelessWidget {
+  final String text;
+  final IconData icon;
+  final Color? iconColor;
+  final VoidCallback onTap;
+  final bool isSelected;
+
+  const ActionButton({
+    super.key,
+    required this.text,
+    required this.icon,
+    required this.onTap,
+    this.iconColor,
+    this.isSelected = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: [
+          Text(
+            text,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          gap, // Adjust spacing as needed
+          Icon(
+            icon,
+            color: isSelected ? iconColor : textBlack,
           ),
         ],
       ),
