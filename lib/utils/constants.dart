@@ -30,7 +30,9 @@ const Color greyBorder = Color(0xFFA3A5A7);
 Color contentOffWhite = const Color(0xffEFEFEF);
 Color navBarColor = const Color(0xffFfffff);
 Color mildGray = const Color(0xffC8C8C8);
-
+Color categoryTextColor = const Color(0xff808080);
+Color textBlack = const Color(0xff000000);
+Color borderStrokeColor = const Color(0xffCCC9C9);
 
 // colors of the border
 Color borderStroke = const Color(0xffCCC9C9);
@@ -45,7 +47,7 @@ const Duration animationDurationLarge = Duration(seconds: 1);
 const loremIpsum =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
-List <String> profileImages = [
+List<String> profileImages = [
   "https://images.unsplash.com/photo-1712847331947-9460dd2f264b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D",
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D",
   "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D",

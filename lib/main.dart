@@ -31,7 +31,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         //TODO: implement theme change
+
+        
         theme: AppTheme.lightTheme,
+        
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRoutes.generateRoute,
         initialRoute: AppRoutes.splashScreen,

@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
+      useMaterial3: true,
       inputDecorationTheme: InputDecorationTheme(
         fillColor: offwhite,
         filled: true,
@@ -15,7 +16,7 @@ class AppTheme {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
-            color: borderStroke,
+            color: borderStrokeColor,
             width: 2,
           ),
         ),

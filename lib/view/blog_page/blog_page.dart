@@ -20,8 +20,7 @@ class BlogPage extends StatelessWidget {
         children: [
           Expanded(
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+              padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -87,80 +86,77 @@ class BlogPage extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 0,
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    color: pureWhite,
-                    height: 50,
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            const Text(
-                              "10K",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  color: pureWhite,
+                  height: SizeUtils.height * 0.07,
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          const Text(
+                            "10K",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
                             ),
-                            IconButton(
-                              onPressed: () {
-                                providerObj.toggleFavoriteSelection();
-                              },
-                              icon: providerObj.isFavoriteSelected
-                                  ? const Icon(
-                                      Icons.favorite,
-                                      color: Colors.red,
-                                    )
-                                  : const Icon(Icons.favorite_outline),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              providerObj.toggleFavoriteSelection();
+                            },
+                            icon: providerObj.isFavoriteSelected
+                                ? const Icon(
+                                    Icons.favorite,
+                                    color: Colors.red,
+                                  )
+                                : const Icon(Icons.favorite_outline),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          const Text(
+                            "20K",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
                             ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            const Text(
-                              "20K",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              providerObj.toggleBookmarkSelection();
+                            },
+                            icon: providerObj.isBookmarkSelected
+                                ? Icon(
+                                    Icons.bookmark,
+                                    color: greenTemp,
+                                  )
+                                : const Icon(Icons.bookmark_outline),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          const Text(
+                            "15K",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
                             ),
-                            IconButton(
-                              onPressed: () {
-                                providerObj.toggleBookmarkSelection();
-                              },
-                              icon: providerObj.isBookmarkSelected
-                                  ? Icon(
-                                      Icons.bookmark,
-                                      color: greenTemp,
-                                    )
-                                  : const Icon(Icons.bookmark_outline),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            const Text(
-                              "15K",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.share_outlined),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.share_outlined),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         ],
       ),
