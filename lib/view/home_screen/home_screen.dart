@@ -68,6 +68,9 @@ class HomeScreen extends StatelessWidget {
         Expanded(
           child: TextFormField(
             decoration: InputDecoration(
+              enabledBorder: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.transparent),
+              ),
               fillColor: pureWhite,
               filled: true,
               hintText: "Search here",
