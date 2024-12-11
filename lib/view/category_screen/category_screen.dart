@@ -1,10 +1,12 @@
+import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/gen/assets.gen.dart';
+
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
+
 import 'package:eadukalthedi/view/category_screen/category_screen_widget/category_container.dart';
 import 'package:flutter/material.dart';
 
-/// A stateless widget that represents the category screen with a list of categories.
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
 
@@ -12,76 +14,70 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+        padding: EdgeInsets.symmetric(
+            horizontal: paddingLarge.h, vertical: padding.h),
         child: Column(
           children: [
-            // Header Row for the title "CATEGORIES"
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "CATEGORIES",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 3.0, // Spacing between characters
-                    fontSize: 20, // Font size
-                    color:
-                        textBlack.withOpacity(0.6), // Text color with opacity
-                  ),
+                  //   style: TextStyle(
+                  //     fontWeight: FontWeight.bold,
+                  //     letterSpacing: 3.0,
+                  //     fontSize: 20,
+                  //     color:
+                  //         textBlack.withOpacity(0.6),
+                  //   ),
+
+                  style: context.poppinsBold20
+                      .copyWith(fontSize: 20.fSize, color: greyBorder),
                 ),
               ],
             ),
-            gapLarge, // Spacing below the title
-
-            // Main Container for special category
+            gapLarge,
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              padding: EdgeInsets.symmetric(horizontal: padding.h),
               height: 84.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0), // Rounded corners
-                color: pureWhite, // Background color
+                borderRadius: BorderRadius.circular(padding.h),
+                color: pureWhite,
                 boxShadow: [
                   BoxShadow(
-                    spreadRadius: 0, // Spread radius of the shadow
-                    blurRadius: 1, // Blur radius of the shadow
-                    offset: const Offset(0, 2), // Shadow offset
-                    color: Colors.black
-                        .withOpacity(0.2), // Shadow color with opacity
+                    spreadRadius: 0,
+                    blurRadius: 1,
+                    offset: const Offset(0, 2),
+                    color: Colors.black.withOpacity(0.2),
                   ),
                 ],
               ),
               child: Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.center, // Center the row content
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     Assets.pngs.specimen.path,
-                    height: SizeUtils.width *
-                        0.2, // Adjusted the image height calculation
+                    height: SizeUtils.width * 0.2,
                   ),
                   Text(
                     "SREE NARAYANA GURU",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 18, // Font size
-                      color: categoryTextColor, // Text color
+                      fontSize: 18,
+                      color: categoryTextColor,
                     ),
                   ),
                 ],
               ),
             ),
-            gapLarge, // Spacing below the main container
-
-            // Expanded ListView for category containers
+            gapLarge,
             Expanded(
               child: ListView.separated(
                 itemBuilder: (context, index) => CategoryContainer(
-                  categoryName:
-                      "Category Name 0$index", // Dynamic category name
+                  categoryName: "Category Name $index",
                 ),
-                separatorBuilder: (context, index) =>
-                    gapLarge, // Spacing between list items
-                itemCount: 20, // Total number of categories
+                separatorBuilder: (context, index) => gapLarge,
+                itemCount: 20,
               ),
             ),
           ],

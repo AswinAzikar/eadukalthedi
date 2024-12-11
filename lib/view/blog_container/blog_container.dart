@@ -44,32 +44,32 @@ class BlogContainer extends StatelessWidget {
                 "Travis Aaron Wagner",
                 style: context.poppinsRegular
                     .copyWith(fontSize: 12.fSize, color: mildGray),
-                // style: TextStyle(
-                //   fontSize: 12,
-                //   fontWeight: FontWeight.normal,
-                // ),
+                
+                
+                
+                
               ),
               Text(
                 "Jul 29, 2022",
 
                 style: context.poppinsRegular
                     .copyWith(color: mildGray, fontSize: 10.fSize),
-                // style: TextStyle(
-                //   fontSize: 10,
-                //   color: mildGray,
-                //   fontWeight: FontWeight.normal,
-                // ),
+                
+                
+                
+                
+                
               ),
               Text(
                 "4 min. read",
 
                 style: context.poppinsRegular
                     .copyWith(color: mildGray, fontSize: 12.fSize),
-                // style: TextStyle(
-                //   color: mildGray,
-                //   fontSize: 11,
-                //   fontWeight: FontWeight.normal,
-                // ),
+                
+                
+                
+                
+                
               ),
             ],
           ),
