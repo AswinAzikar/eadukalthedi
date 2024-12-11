@@ -57,12 +57,12 @@ class CategoryScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     Assets.pngs.specimen.path,
-                    height: SizeUtils.width * 0.2,
+                    height: SizeUtils.width * 0.15,
                   ),
                   Text(
                     "SREE NARAYANA GURU",
                     style: context.poppinsRegular16
-                        .copyWith(color: categoryTextColor, fontSize: 24.fSize),
+                        .copyWith(color: categoryTextColor, fontSize: 20.fSize),
                   ),
                 ],
               ),
