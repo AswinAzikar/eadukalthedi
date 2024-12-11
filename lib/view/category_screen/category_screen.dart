@@ -4,7 +4,7 @@ import 'package:eadukalthedi/gen/assets.gen.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 
-import 'package:eadukalthedi/view/category_screen/category_screen_widget/category_container.dart';
+import 'package:eadukalthedi/view/category_screen/widget/category_container.dart';
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatelessWidget {
