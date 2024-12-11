@@ -1,10 +1,12 @@
 import 'package:eadukalthedi/extensions/font_extensions.dart';
+import 'package:eadukalthedi/gen/assets.gen.dart';
 
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/view/setting_screen/widgets/textform_widget.dart';
 import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -79,7 +81,8 @@ class SettingScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // TODO: Insert SVG supportus file
+                      SvgPicture.asset(Assets.svgs.supportUs),
+                      gap,
                       Text(
                         "Support Us", // Display the category name
                         style: context.poppinsBold
