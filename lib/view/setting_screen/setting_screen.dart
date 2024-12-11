@@ -28,11 +28,11 @@ class SettingScreen extends StatelessWidget {
               const FormTextWidget(
                   name: "Email", hintText: "info@abijithcb.com"),
               gapLarge,
-              const FormTextWidget(
+             
+              gapLarge, const FormTextWidget(
                   isDatePickerEnabled: true,
                   name: "Date of Birth",
                   hintText: "29/03/2003"),
-              gapLarge,
               const FormTextWidget(
                   name: "Address", hintText: "ABC House Town P O City, 689622"),
               gapLarge,

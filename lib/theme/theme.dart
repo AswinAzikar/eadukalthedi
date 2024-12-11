@@ -28,6 +28,7 @@ class AppTheme {
         ),
       ),
       appBarTheme: AppBarTheme(
+        surfaceTintColor: offwhite,
         iconTheme: const IconThemeData(
           color: Colors.black,
         ),
