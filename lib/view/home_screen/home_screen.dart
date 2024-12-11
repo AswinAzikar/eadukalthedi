@@ -67,6 +67,7 @@ class HomeScreen extends StatelessWidget {
       children: [
         Expanded(
           child: TextFormField(
+            cursorColor: greenTemp,
             decoration: InputDecoration(
               enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.transparent),

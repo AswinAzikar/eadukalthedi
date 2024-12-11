@@ -49,6 +49,7 @@ class SettingScreen extends StatelessWidget {
               gapLarge,
               gapLarge,
               CommonButton(
+                elevated: true,
                 color: greenTemp,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -70,14 +71,12 @@ class SettingScreen extends StatelessWidget {
 
               // Support us
 
-              Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: SizeUtils.width * 0.05,
-                      vertical: SizeUtils.width * 0.05),
-                  decoration: BoxDecoration(
-                    color: pureWhite,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
+              CommonButton(
+                elevated: true,
+                onPressed: () {},
+                color: pureWhite,
+                child: SizedBox(
+                  width: double.maxFinite,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -86,10 +85,12 @@ class SettingScreen extends StatelessWidget {
                       Text(
                         "Support Us", // Display the category name
                         style: context.poppinsBold
-                            .copyWith(color: textBlack, fontSize: 22.fSize),
+                            .copyWith(color: textBlack, fontSize: 18.fSize),
                       ),
                     ],
-                  )),
+                  ),
+                ),
+              ),
 
               Column(
                 children: List.generate(
