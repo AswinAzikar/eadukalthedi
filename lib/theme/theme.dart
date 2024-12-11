@@ -13,6 +13,12 @@ class AppTheme {
           color: miniHeadingText.withOpacity(0.5),
           fontSize: 17,
         ),
+        focusedBorder:
+            OutlineInputBorder(borderSide: BorderSide(color: greenTemp)),
+        activeIndicatorBorder: BorderSide(color: greenTemp),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: borderStrokeColor),
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
