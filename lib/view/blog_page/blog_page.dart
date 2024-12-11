@@ -1,3 +1,4 @@
+import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
@@ -18,21 +19,23 @@ class BlogPage extends StatelessWidget {
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: offwhite),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
+              padding: EdgeInsets.only(
+                  top: SizeUtils.height * 0.02,
+                  left: SizeUtils.height * 0.02,
+                  right: SizeUtils.height * 0.02),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    const Text(
+                    Text(
                       "Please Start Writing Better Git Commits",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: context.poppinsBold
+                          .copyWith(color: textBlack, fontSize: 28.fSize),
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(height: SizeUtils.height * 0.02),
                     // Author details and metadata
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,11 +48,11 @@ class BlogPage extends StatelessWidget {
                             Navigator.pushNamed(
                                 context, AppRoutes.authorViewScreen);
                           },
-                          child: const CircleAvatar(
-                            backgroundImage: NetworkImage(
+                          child: CircleAvatar(
+                            backgroundImage: const NetworkImage(
                               "https://images.pexels.com/photos/4992382/pexels-photo-4992382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                             ),
-                            radius: 15,
+                            radius: SizeUtils.height * 0.02,
                           ),
                         ),
                         // Author's name
@@ -60,43 +63,34 @@ class BlogPage extends StatelessWidget {
                             Navigator.pushNamed(
                                 context, AppRoutes.authorViewScreen);
                           },
-                          child: const Text(
+                          child: Text(
                             "Travis Aaron Wagner",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            style: context.poppinsRegular12
+                                .copyWith(color: textBlack, fontSize: 16.fSize),
                           ),
                         ),
                         // Publication date
                         Text(
                           "Jul 29, 2022",
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: mildGray,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style: context.poppinsRegular12
+                              .copyWith(color: mildGray, fontSize: 12.fSize),
                         ),
                         // Reading time
                         Text(
                           "4 min. read",
-                          style: TextStyle(
-                            color: mildGray,
-                            fontSize: 11,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style: context.poppinsRegular12
+                              .copyWith(color: mildGray, fontSize: 12.fSize),
                         ),
                       ],
                     ),
                     const Divider(), // Divider line between author details and content
 
-                    const SizedBox(height: 20),
+                    SizedBox(height: SizeUtils.height * 0.01),
 
-                    const Text(
+                    Text(
                       "I recently read a helpful article on Hashnode by Simon Egersand titled Write Git Commit Messages Your Colleagues Will Love, and it inspired me to dive a little deeper into understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look \n\n understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.\n\n understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.\n\n understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.\n\n understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.understanding what makes a Git commit good or bad.ou're probably thinking to yourself, my commits are just fine, thank you. But are they really? Let's take a closer look.",
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
+                      style: context.poppinsRegular12
+                          .copyWith(color: textBlack, fontSize: 20.fSize),
                     )
                   ],
                 ),
@@ -109,7 +103,8 @@ class BlogPage extends StatelessWidget {
                 child: Container(
                   color: pureWhite,
                   height: SizeUtils.height * 0.07,
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: SizeUtils.width * 0.05),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -189,9 +184,8 @@ class ActionButton extends StatelessWidget {
         children: [
           Text(
             text,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            style: context.poppinsSemiBold
+                .copyWith(color: Colors.black, fontSize: 18.fSize),
           ),
           gap, // Adjust spacing as needed
           Icon(

@@ -44,42 +44,24 @@ class BlogContainer extends StatelessWidget {
                 "Travis Aaron Wagner",
                 style: context.poppinsRegular
                     .copyWith(fontSize: 12.fSize, color: mildGray),
-                
-                
-                
-                
               ),
               Text(
                 "Jul 29, 2022",
-
                 style: context.poppinsRegular
                     .copyWith(color: mildGray, fontSize: 10.fSize),
-                
-                
-                
-                
-                
               ),
               Text(
                 "4 min. read",
-
                 style: context.poppinsRegular
                     .copyWith(color: mildGray, fontSize: 12.fSize),
-                
-                
-                
-                
-                
               ),
             ],
           ),
           const Divider(),
-          const Text(
+          Text(
             "I recently read a helpful article on Hashnode by Simon Egersand titled Write Git Commit Messages Your Colleagues Will Love, and it inspired me to dive a little deeper into understanding what makes a Git commit read a helpful article on Hashnode by Simon Egersand titled Write Git Commit Messages Your Colleagues Will Love, and it inspired me to dive a little deeper into understanding what makes a Git commit good or bad",
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.normal,
-            ),
+            style: context.poppinsRegular
+                .copyWith(color: textBlack, fontSize: 15.fSize),
             maxLines: 6,
             overflow: TextOverflow.ellipsis,
           ),
@@ -92,17 +74,16 @@ class BlogContainer extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    height: 35,
+                    height: SizeUtils.height * 0.05,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: greenTemp,
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         "Read more",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: context.poppinsRegular
+                            .copyWith(color: pureWhite, fontSize: 15.fSize),
                       ),
                     ),
                   ),

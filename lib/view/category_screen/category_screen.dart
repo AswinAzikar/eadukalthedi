@@ -39,7 +39,7 @@ class CategoryScreen extends StatelessWidget {
             gapLarge,
             Container(
               padding: EdgeInsets.symmetric(horizontal: padding.h),
-              height: 84.0,
+              height: SizeUtils.height * 0.1,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(padding.h),
                 color: pureWhite,
@@ -61,11 +61,8 @@ class CategoryScreen extends StatelessWidget {
                   ),
                   Text(
                     "SREE NARAYANA GURU",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: categoryTextColor,
-                    ),
+                    style: context.poppinsRegular16
+                        .copyWith(color: categoryTextColor, fontSize: 24.fSize),
                   ),
                 ],
               ),

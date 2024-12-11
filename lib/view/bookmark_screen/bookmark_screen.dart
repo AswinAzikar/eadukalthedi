@@ -1,9 +1,7 @@
 import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
-import 'package:eadukalthedi/view/auth_screen/auth_screen.dart';
 import 'package:eadukalthedi/view/blog_container/blog_container.dart';
-import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
 
 class BookMarkScreen extends StatelessWidget {
@@ -13,7 +11,9 @@ class BookMarkScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeUtils.height * 0.02,
+            vertical: SizeUtils.height * 0.02),
         child: Column(
           children: [
             // Header Row for the title "CATEGORIES"

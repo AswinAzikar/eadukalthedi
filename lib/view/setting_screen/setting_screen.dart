@@ -14,7 +14,10 @@ class SettingScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10),
+          padding: EdgeInsets.only(
+              left: SizeUtils.width * 0.05,
+              right: SizeUtils.width * 0.05,
+              top: SizeUtils.width * 0.05),
           child: Column(
             children: [
               gapLarge,
@@ -66,7 +69,9 @@ class SettingScreen extends StatelessWidget {
               // Support us
 
               Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: SizeUtils.width * 0.05,
+                      vertical: SizeUtils.width * 0.05),
                   decoration: BoxDecoration(
                     color: pureWhite,
                     borderRadius: BorderRadius.circular(12),
@@ -77,11 +82,8 @@ class SettingScreen extends StatelessWidget {
                       // TODO: Insert SVG supportus file
                       Text(
                         "Support Us", // Display the category name
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500, // Text weight
-                          fontSize: 18, // Font size
-                          color: textBlack, // Text color
-                        ),
+                        style: context.poppinsBold
+                            .copyWith(color: textBlack, fontSize: 22.fSize),
                       ),
                     ],
                   )),

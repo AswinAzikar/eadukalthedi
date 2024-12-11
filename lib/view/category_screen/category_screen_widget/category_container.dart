@@ -1,3 +1,4 @@
+import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class CategoryContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: EdgeInsets.symmetric(horizontal: SizeUtils.height * 0.08),
       height: SizeUtils.height * 0.08,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
@@ -30,11 +31,8 @@ class CategoryContainer extends StatelessWidget {
       child: Center(
         child: Text(
           categoryName,
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 18,
-            color: categoryTextColor,
-          ),
+          style: context.poppinsRegular
+              .copyWith(color: categoryTextColor, fontSize: 22.fSize),
         ),
       ),
     );

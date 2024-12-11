@@ -18,14 +18,14 @@ class AuthorViewScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: SizeUtils.width * 0.05),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               // profile image
-              const CircleAvatar(
-                radius: 75,
-                backgroundImage: NetworkImage(
+              CircleAvatar(
+                radius: SizeUtils.height * 0.08,
+                backgroundImage: const NetworkImage(
                     "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
               ),
               gapLarge,
@@ -54,7 +54,8 @@ class AuthorViewScreen extends StatelessWidget {
               gapLarge,
 
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding:
+                    EdgeInsets.symmetric(horizontal: SizeUtils.width * 0.07),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
