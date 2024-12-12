@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
     final providerObj = Provider.of<HomeScreenController>(context);
 
     return Scaffold(
-      // TODO: The FLoating Action for Editing is only for the Author and Admin
       floatingActionButton: Padding(
         padding: EdgeInsets.only(bottom: SizeUtils.height * 0.1),
         child: FloatingActionButton(
@@ -57,16 +56,12 @@ class HomeScreen extends StatelessWidget {
                 child: TabBarView(
                   children: List.generate(
                     5,
-                    (index) => providerObj.getCategoryTabPages()[index],
+                    (index) {
+                      return providerObj.getCategoryTabPages()[index];
+                    },
                   ),
                 ),
               ),
-              Column(
-                children: List.generate(
-                  5,
-                  (index) => gapLarge,
-                ),
-              )
             ],
           ),
         ),

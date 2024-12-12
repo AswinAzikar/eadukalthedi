@@ -31,6 +31,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: offwhite),
       ),
       bottomNavigationBar: CurvedNavigationBar(
+        index: providerObj.selectedIndex,
         buttonBackgroundColor: greenTemp,
         color: navBarColor,
         backgroundColor: Colors.transparent,
@@ -58,9 +59,11 @@ class _NavigationScreenState extends State<NavigationScreen> {
         ],
         onTap: (index) {
           providerObj.selectPage(index);
+          providerObj.pageController.jumpToPage(index); // Sync with PageView
         },
       ),
       body: PageView(
+        allowImplicitScrolling: true,
         controller: providerObj.pageController,
         // ignore: prefer_const_literals_to_create_immutables
         children: const [
@@ -69,8 +72,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
           BookMarkScreen(),
           SettingScreen(),
         ],
-        onPageChanged: (value) {
-          providerObj.selectPage(value);
+        onPageChanged: (index) {
+          providerObj.selectPage(index);
         },
       ),
     );
