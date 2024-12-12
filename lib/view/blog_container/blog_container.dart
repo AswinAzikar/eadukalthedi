@@ -26,11 +26,25 @@ class BlogContainer extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Text(
-            "Please Start Writing Better Git Commits",
-            maxLines: 2,
-            style: context.poppinsBold20
-                .copyWith(color: Colors.black, fontSize: 20.fSize),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  "Please Start Writing Better Git Commits",
+                  maxLines: 2,
+                  style: context.poppinsBold20
+                      .copyWith(color: Colors.black, fontSize: 20.fSize),
+                ),
+              ),
+
+              // TODO : ONly for ##Authors
+              GestureDetector(
+                onTap: () {
+                  // TODO to delete Blog only for #Authors
+                },
+                child: Icon(Icons.more_vert),
+              )
+            ],
           ),
           gapLarge,
           Row(
