@@ -59,13 +59,13 @@ class _NavigationScreenState extends State<NavigationScreen> {
         ],
         onTap: (index) {
           providerObj.selectPage(index);
-          providerObj.pageController.jumpToPage(index); // Sync with PageView
+          providerObj.pageController.jumpToPage(index); 
         },
       ),
       body: PageView(
         allowImplicitScrolling: true,
         controller: providerObj.pageController,
-        // ignore: prefer_const_literals_to_create_immutables
+        
         children: const [
           HomeScreen(),
           CategoryScreen(),
