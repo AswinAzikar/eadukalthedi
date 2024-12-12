@@ -13,6 +13,18 @@ class HomeScreen extends StatelessWidget {
     final providerObj = Provider.of<HomeScreenController>(context);
 
     return Scaffold(
+      // TODO: The FLoating Action for Editing is only for the Author and Admin
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(bottom: SizeUtils.height * 0.1),
+        child: FloatingActionButton(
+          backgroundColor: greenTemp,
+          onPressed: () {},
+          child: Icon(
+            Icons.edit_outlined,
+            color: pureWhite,
+          ),
+        ),
+      ),
       body: DefaultTabController(
         length: 5,
         child: Padding(

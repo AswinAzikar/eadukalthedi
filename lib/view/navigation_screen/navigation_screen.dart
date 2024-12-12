@@ -5,6 +5,7 @@ import 'package:eadukalthedi/view/bookmark_screen/bookmark_screen.dart';
 import 'package:eadukalthedi/view/category_screen/category_screen.dart';
 import 'package:eadukalthedi/view/home_screen/home_screen.dart';
 import 'package:eadukalthedi/view/navigation_screen/navigation_screen_controller.dart';
+
 import 'package:eadukalthedi/view/setting_screen/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

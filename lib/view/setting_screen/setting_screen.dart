@@ -1,12 +1,12 @@
 import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/gen/assets.gen.dart';
-
+import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
-import 'package:eadukalthedi/view/setting_screen/widgets/textform_widget.dart';
 import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -14,92 +14,99 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.only(
-              left: SizeUtils.width * 0.05,
-              right: SizeUtils.width * 0.05,
-              top: SizeUtils.width * 0.05),
-          child: Column(
-            children: [
-              gapLarge,
-              const FormTextWidget(name: "Name", hintText: "Enter Your Name"),
-              gapLarge,
-              const FormTextWidget(
-                  name: "Email", hintText: "info@abijithcb.com"),
-              gapLarge,
-             
-              gapLarge, const FormTextWidget(
-                  isDatePickerEnabled: true,
-                  name: "Date of Birth",
-                  hintText: "29/03/2003"),
-              const FormTextWidget(
-                  name: "Address", hintText: "ABC House Town P O City, 689622"),
-              gapLarge,
-              const FormTextWidget(
-                  name: "Phone Number", hintText: "+91 8590377418"),
-              gapLarge,
-              const FormTextWidget(
-                  name: "SNDP YOGAM UNION", hintText: "Mannar Union"),
-              gapLarge,
-              const FormTextWidget(
-                  name: "SNDP YOGAM BRANCH", hintText: "SNDP YOGMA BR NO 658"),
-              gapLarge,
-              const FormTextWidget(name: "Pincode", hintText: "689622"),
-              gapLarge,
-              gapLarge,
-              CommonButton(
-                elevated: true,
-                color: greenTemp,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Save Changes",
-                      style: context.poppinsRegular16
-                          .copyWith(color: offwhite, fontSize: 16.fSize),
-                    )
-                  ],
-                ),
-                onPressed: () {
-                  // TODO: save details Logic
-                },
-              ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeUtils.width * 0.05,
+            vertical: SizeUtils.height * 0.01),
+        child: Column(
+          children: [
+            // image , name , location details
+            // Profile Image
+            CircleAvatar(
+              radius: SizeUtils.height * 0.07,
+              backgroundImage: NetworkImage(profileImages.first),
+            ),
 
-              gapLarge,
-              gapLarge,
-
-              // Support us
-
-              CommonButton(
-                elevated: true,
-                onPressed: () {},
-                color: pureWhite,
-                child: SizedBox(
-                  width: double.maxFinite,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+            gapLarge,
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Location and Name
+                Expanded(
+                  child: Column(
                     children: [
-                      SvgPicture.asset(Assets.svgs.supportUs),
-                      gap,
                       Text(
-                        "Support Us", // Display the category name
-                        style: context.poppinsBold
-                            .copyWith(color: textBlack, fontSize: 18.fSize),
+                        "Sri Vinkayya Nair",
+                        style: context.poppinsBold20.copyWith(
+                            color: Colors.black,
+                            fontSize: 25.fSize,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        "Place: Kottayam",
+                        style: context.poppinsBold20.copyWith(
+                            color: Colors.black,
+                            fontSize: 15.fSize,
+                            fontWeight: FontWeight.w600),
                       ),
                     ],
                   ),
                 ),
-              ),
+              ],
+            ),
+            gapLarge,
 
-              Column(
-                children: List.generate(
-                  8,
-                  (index) => gapLarge,
+            // edit button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CommonButton(
+                  color: textBlack,
+                  child: Center(
+                    child: Text(
+                      "Edit Profile",
+                      style: context.poppinsBold20.copyWith(
+                          color: pureWhite,
+                          fontSize: 15.fSize,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.profileEditPage);
+                  },
                 ),
-              )
-            ],
-          ),
+              ],
+            ),
+
+            gap,
+
+            // divider
+            const Divider(),
+
+            gapLarge, gapLarge,
+
+            // support Button
+
+            Container(
+              padding: EdgeInsets.all(SizeUtils.width * 0.1),
+              height: SizeUtils.height * 0.3,
+              width: SizeUtils.width * 0.675,
+              decoration: BoxDecoration(
+                color: pureWhite,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: textBlack.withOpacity(0.1),
+                    blurRadius: 4,
+                  ),
+                ],
+              ),
+              child: SvgPicture.asset(
+                Assets.svgs.supportUs,
+                fit: BoxFit.cover,
+              ),
+            )
+          ],
         ),
       ),
     );

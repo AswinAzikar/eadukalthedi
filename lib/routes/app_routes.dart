@@ -2,6 +2,7 @@ import 'package:eadukalthedi/view/auth_screen/auth_screen.dart';
 import 'package:eadukalthedi/view/author_view_screen/author_view_screen.dart';
 import 'package:eadukalthedi/view/blog_page/blog_page.dart';
 import 'package:eadukalthedi/view/navigation_screen/navigation_screen.dart';
+import 'package:eadukalthedi/view/profile_edit_screen/profile_edit_screen.dart';
 import 'package:eadukalthedi/view/splash_screen/splash_screen.dart';
 import 'package:eadukalthedi/view/welcom_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class AppRoutes {
   static const String blogPageScreen = "/BlogPage";
   static const String navigationScreen = "/NavScreen";
   static const String authorViewScreen = "/AuthorViewScreen";
+  static const String profileEditPage = "/ProfileEditScreen";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -31,6 +33,9 @@ class AppRoutes {
 
       case authorViewScreen:
         return MaterialPageRoute(builder: (_) => const AuthorViewScreen());
+
+      case profileEditPage:
+        return MaterialPageRoute(builder: (_) => const ProfileEditScreen());
 
       default:
         return MaterialPageRoute(
