@@ -21,6 +21,15 @@ final gapXXL = Gap(paddingXXL.h);
 final gapSmall = Gap(paddingSmall.h);
 final gapTiny = Gap(paddingTiny.h);
 
+LinearGradient primaryGradient = const LinearGradient(
+  colors: [
+    Color(0xFFF35C5C), 
+    Color(0xFFF2D50F), 
+  ],
+  stops: [0.15, 0.79], 
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+);
 Color primalColor = const Color(0xffCC971C);
 Color offwhite = const Color(0xffF5F7F8);
 Color pureWhite = const Color(0xffFFFFFF);
