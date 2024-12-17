@@ -23,10 +23,10 @@ final gapTiny = Gap(paddingTiny.h);
 
 LinearGradient primaryGradient = const LinearGradient(
   colors: [
-    Color(0xFFF35C5C), 
-    Color(0xFFF2D50F), 
+    Color(0xffEF6161),
+    Color(0xFFF2D50F),
   ],
-  stops: [0.15, 0.79], 
+  stops: [0.15, 0.79],
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
 );

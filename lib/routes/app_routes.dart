@@ -1,11 +1,17 @@
 import 'package:eadukalthedi/view/auth_screen/auth_screen.dart';
 import 'package:eadukalthedi/view/blog_page/blog_page.dart';
 import 'package:eadukalthedi/view/navigation_screen/navigation_screen.dart';
+import 'package:eadukalthedi/view/profile_screen/profile_major.dart';
+import 'package:eadukalthedi/view/profile_screen/profile_vitals.dart';
+import 'package:eadukalthedi/view/profile_screen/profile_welcome.dart';
 import 'package:eadukalthedi/view/splash_screen/splash_screen.dart';
 import 'package:eadukalthedi/view/welcom_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
+  static const String profileWelcomeScreen = "/profileWelcomeScreen";
+  static const String profileVitalScreen = "/profileVitalScreen";
+  static const String profileMajorScreen = "profileMajorScreen";
   static const String splashScreen = '/';
   static const String authScreen = "/AuthScreen";
   static const String welcomeScreen = "/WelcomeScreen";
@@ -14,6 +20,14 @@ class AppRoutes {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case profileVitalScreen:
+        return MaterialPageRoute(builder: (_) => const ProfileVitals());
+
+      case profileMajorScreen:
+        return MaterialPageRoute(builder: (_) => const ProfileMajor());
+
+      case profileWelcomeScreen:
+        return MaterialPageRoute(builder: (_) => const ProfileWelcome());
       case splashScreen:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case authScreen:

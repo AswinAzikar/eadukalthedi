@@ -54,9 +54,15 @@ class _AuthScreenState extends State<AuthScreen> {
               ),
               gapLarge,
               CommonButton(
+                isAGradieantButton: true,
                 onPressed: () async {
                   //TODO : if user doesnot exist then navigate to create_profile
-                  await Navigator.pushNamed(context, AppRoutes.welcomeScreen);
+
+                  await Navigator.pushNamed(
+                      context,
+                      isAlreadyExist
+                          ? AppRoutes.navigationScreen
+                          : AppRoutes.profileMajorScreen);
                 },
                 elevated: true,
                 color: Colors.white,
