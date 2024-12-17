@@ -18,12 +18,11 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  bool isAlreadyExist =
-      true; 
+  bool isAlreadyExist = true;
 
   void toggleLoginPage() {
     setState(() {
-      isAlreadyExist = !isAlreadyExist; 
+      isAlreadyExist = !isAlreadyExist;
     });
   }
 
@@ -55,9 +54,15 @@ class _AuthScreenState extends State<AuthScreen> {
               ),
               gapLarge,
               CommonButton(
+                isAGradieantButton: true,
                 onPressed: () async {
-                  
-                  await Navigator.pushNamed(context, AppRoutes.welcomeScreen);
+                  //TODO : if user doesnot exist then navigate to create_profile
+
+                  await Navigator.pushNamed(
+                      context,
+                      isAlreadyExist
+                          ? AppRoutes.navigationScreen
+                          : AppRoutes.profileMajorScreen);
                 },
                 elevated: true,
                 color: Colors.white,
@@ -66,18 +71,18 @@ class _AuthScreenState extends State<AuthScreen> {
                   children: [
                     SvgPicture.asset(Assets.svgs.google),
                     gap,
-                    
                     Text(
-                      isAlreadyExist ? "Login with Google" : "Continue with Google",
+                      isAlreadyExist
+                          ? "Login with Google"
+                          : "Continue with Google",
                       style: context.poppinsRegular16,
                     )
                   ],
                 ),
               ),
-            gapLarge, 
+              gapLarge,
               GestureDetector(
-                onTap:
-                    toggleLoginPage, 
+                onTap: toggleLoginPage,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -91,7 +96,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     Text(
                       isAlreadyExist ? "Create one" : "Log In",
                       style:
-                          context.poppinsRegular12.copyWith(color: greenTemp),
+                          context.poppinsRegular12.copyWith(color: primalColor),
                     ),
                   ],
                 ),

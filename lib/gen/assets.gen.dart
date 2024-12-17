@@ -25,14 +25,23 @@ class $AssetsPngsGen {
 class $AssetsSvgsGen {
   const $AssetsSvgsGen();
 
+  /// File path: assets/svgs/back button.svg
+  String get backButton => 'assets/svgs/back button.svg';
+
   /// File path: assets/svgs/google.svg
   String get google => 'assets/svgs/google.svg';
 
-  /// File path: assets/svgs/back button.svg
-  String get backButtonIcons => 'assets/svgs/back button.svg';
+  /// File path: assets/svgs/prog_bar_1.svg
+  String get progBar1 => 'assets/svgs/prog_bar_1.svg';
+
+  /// File path: assets/svgs/prog_bar_2.svg
+  String get progBar2 => 'assets/svgs/prog_bar_2.svg';
+
+  /// File path: assets/svgs/prog_bar_3.svg
+  String get progBar3 => 'assets/svgs/prog_bar_3.svg';
 
   /// List of all assets
-  List<String> get values => [google, backButtonIcons];
+  List<String> get values => [backButton, google, progBar1, progBar2, progBar3];
 }
 
 class Assets {

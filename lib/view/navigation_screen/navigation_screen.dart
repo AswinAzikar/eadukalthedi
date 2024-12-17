@@ -30,7 +30,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: offwhite),
       ),
       bottomNavigationBar: CurvedNavigationBar(
-        buttonBackgroundColor: greenTemp,
+        buttonBackgroundColor: primalColor,
         color: navBarColor,
         backgroundColor: Colors.transparent,
         items: <Widget>[

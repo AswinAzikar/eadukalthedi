@@ -7,7 +7,6 @@ import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
 
-
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -44,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CommonButton(
-                        color: greenTemp,
+                        color: primalColor,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

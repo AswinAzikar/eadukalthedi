@@ -25,7 +25,7 @@ class TermsAndConditionsWidget extends StatelessWidget {
               TextSpan(
                 text: "Terms and Conditions",
                 style: TextStyle(
-                  color: greenTemp,
+                  color: primalColor,
                   fontWeight: FontWeight.bold,
                 ),
                 recognizer: TapGestureRecognizer()
@@ -38,7 +38,7 @@ class TermsAndConditionsWidget extends StatelessWidget {
               TextSpan(
                 text: "Privacy Policy",
                 style: TextStyle(
-                  color: greenTemp,
+                  color: primalColor,
                   fontWeight: FontWeight.bold,
                 ),
                 recognizer: TapGestureRecognizer()
