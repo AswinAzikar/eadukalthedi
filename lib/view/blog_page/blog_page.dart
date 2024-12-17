@@ -135,7 +135,7 @@ class BlogPage extends StatelessWidget {
                               icon: providerObj.isBookmarkSelected
                                   ? Icon(
                                       Icons.bookmark,
-                                      color: greenTemp,
+                                      color: primalColor,
                                     )
                                   : const Icon(Icons.bookmark_outline),
                             ),

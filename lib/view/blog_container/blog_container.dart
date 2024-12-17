@@ -95,7 +95,7 @@ class BlogContainer extends StatelessWidget {
                     height: 35,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color: greenTemp,
+                      color: primalColor,
                     ),
                     child: const Center(
                       child: Text(
