@@ -1,5 +1,6 @@
 import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/gen/assets.gen.dart';
+import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/view/profile_screen/controller/textformfield_controllers.dart';
 import 'package:eadukalthedi/view/profile_screen/widgets/bullet_text_widget.dart';
@@ -54,6 +55,9 @@ class ProfileWelcome extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(paddingLarge),
         child: CommonButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.navigationScreen);
+            },
             isAGradieantButton: true,
             child: Center(
               child: Text(
