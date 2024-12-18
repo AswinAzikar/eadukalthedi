@@ -7,6 +7,7 @@ import 'package:eadukalthedi/view/profile_screen/profile_welcome.dart';
 import 'package:eadukalthedi/view/splash_screen/splash_screen.dart';
 import 'package:eadukalthedi/view/welcom_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class AppRoutes {
   static const String profileWelcomeScreen = "/profileWelcomeScreen";
@@ -21,10 +22,15 @@ class AppRoutes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case profileVitalScreen:
-        return MaterialPageRoute(builder: (_) => const ProfileVitals());
-
+        return PageTransition(
+            child: const ProfileVitals(), type: PageTransitionType.fade);
       case profileMajorScreen:
-        return MaterialPageRoute(builder: (_) => const ProfileMajor());
+        return PageTransition(
+            childCurrent: const AuthScreen(),
+            child: const ProfileMajor(),
+            type: PageTransitionType.rightToLeftJoined);
+      // case profileMajorScreen:
+      //   return MaterialPageRoute(builder: (_) => const ProfileMajor());
 
       case profileWelcomeScreen:
         return MaterialPageRoute(builder: (_) => const ProfileWelcome());

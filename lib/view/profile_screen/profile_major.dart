@@ -1,10 +1,15 @@
+import 'package:eadukalthedi/routes/app_routes.dart';
+import 'package:eadukalthedi/utils/log_utils.dart';
 import 'package:eadukalthedi/view/profile_screen/controller/textformfield_controllers.dart';
+import 'package:eadukalthedi/view/profile_screen/profile_vitals.dart';
+import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/gen/assets.gen.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
+import 'package:logger/logger.dart';
 
 class ProfileMajor extends StatefulWidget {
   const ProfileMajor({super.key});
@@ -16,7 +21,8 @@ class ProfileMajor extends StatefulWidget {
 class _ProfileMajorState extends State<ProfileMajor> {
   @override
   void dispose() {
-    dateController.dispose();
+    // nameController.dispose();
+    // dateController.dispose();
     super.dispose();
   }
 
@@ -25,9 +31,9 @@ class _ProfileMajorState extends State<ProfileMajor> {
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(1900),
-      lastDate: DateTime(2100),
+      lastDate: DateTime.now(),
     );
-    if (picked != null) {
+    if (picked != null && mounted) {
       setState(() {
         dateController.text = "${picked.toLocal()}".split(' ')[0];
       });
@@ -47,7 +53,7 @@ class _ProfileMajorState extends State<ProfileMajor> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: paddingLarge),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -117,6 +123,30 @@ class _ProfileMajorState extends State<ProfileMajor> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(paddingLarge),
+        child: Builder(builder: (context) {
+          final bool canSubmit =
+              nameController.text.isNotEmpty && dateController.text.isNotEmpty;
+          return CommonButton(
+            isActive: canSubmit,
+            isAGradieantButton: canSubmit,
+            onPressed: canSubmit
+                ? () {
+                Navigator.pushNamed(context, AppRoutes.profileVitalScreen
+                );
+                  }
+                : null,
+            child: Center(
+              child: Text(
+                "NEXT",
+                style: context.helveticaNeueBold18
+                    .copyWith(color: Colors.white, fontSize: 16.fSize),
+              ),
+            ),
+          );
+        }),
       ),
     );
   }

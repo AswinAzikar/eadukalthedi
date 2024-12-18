@@ -39,6 +39,7 @@ const Color greyBorder = Color(0xFFA3A5A7);
 Color contentOffWhite = const Color(0xffEFEFEF);
 Color navBarColor = const Color(0xffFfffff);
 Color mildGray = const Color(0xffC8C8C8);
+Color inactiveGray = mildGray;
 
 // colors of the border
 Color borderStroke = const Color(0xffCCC9C9);
