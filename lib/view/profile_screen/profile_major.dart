@@ -1,3 +1,4 @@
+import 'package:eadukalthedi/view/profile_screen/controller/textformfield_controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:eadukalthedi/extensions/font_extensions.dart';
@@ -13,6 +14,26 @@ class ProfileMajor extends StatefulWidget {
 }
 
 class _ProfileMajorState extends State<ProfileMajor> {
+  @override
+  void dispose() {
+    dateController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime(2100),
+    );
+    if (picked != null) {
+      setState(() {
+        dateController.text = "${picked.toLocal()}".split(' ')[0];
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,13 +70,46 @@ class _ProfileMajorState extends State<ProfileMajor> {
                   children: [
                     Text(
                       "Your Name",
-                      style: context.helveticaNeueBlack
-                          .copyWith(fontSize: 20.fSize),
+                      style: context.helveticaNeueRegular.copyWith(
+                        fontSize: 20.fSize,
+                      ),
                     ),
                     TextFormField(
-                      decoration: const InputDecoration(
+                      controller: nameController,
+                      decoration: InputDecoration(
                         hintText: "Full Name",
+                        hintStyle: context.helveticaNeueRegular16.copyWith(
+                          fontSize: 16.fSize,
+                          color: greyBorder,
+                        ),
                       ),
+                    ),
+                    gapLarge,
+                    Text(
+                      "Date of Birth",
+                      style: context.helveticaNeueRegular.copyWith(
+                        fontSize: 20.fSize,
+                      ),
+                    ),
+                    gap,
+                    TextFormField(
+                      controller: dateController,
+                      readOnly: true,
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.only(bottom: 0),
+                        hintText: "Select Date",
+                        hintStyle: context.helveticaNeueRegular16.copyWith(
+                          fontSize: 16.fSize,
+                          color: greyBorder,
+                        ),
+                        suffixIcon: Padding(
+                          padding: EdgeInsets.only(bottom: paddingLarge.h),
+                          child: const Icon(
+                            Icons.calendar_today,
+                          ),
+                        ),
+                      ),
+                      onTap: () => _selectDate(context),
                     ),
                   ],
                 ),
