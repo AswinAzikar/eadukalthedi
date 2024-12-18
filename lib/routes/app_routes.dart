@@ -21,6 +21,9 @@ class AppRoutes {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case profileWelcomeScreen:
+        return PageTransition(
+            child: const ProfileWelcome(), type: PageTransitionType.fade);
       case profileVitalScreen:
         return PageTransition(
             child: const ProfileVitals(), type: PageTransitionType.fade);
@@ -29,11 +32,7 @@ class AppRoutes {
             childCurrent: const AuthScreen(),
             child: const ProfileMajor(),
             type: PageTransitionType.rightToLeftJoined);
-      // case profileMajorScreen:
-      //   return MaterialPageRoute(builder: (_) => const ProfileMajor());
 
-      case profileWelcomeScreen:
-        return MaterialPageRoute(builder: (_) => const ProfileWelcome());
       case splashScreen:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case authScreen:

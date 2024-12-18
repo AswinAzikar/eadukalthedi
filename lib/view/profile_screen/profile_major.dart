@@ -44,7 +44,7 @@ class _ProfileMajorState extends State<ProfileMajor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: kToolbarHeight,
+        toolbarHeight: kToolbarHeight.h,
         centerTitle: true,
         title: Text(
           "Complete Your Profile",
@@ -134,8 +134,7 @@ class _ProfileMajorState extends State<ProfileMajor> {
             isAGradieantButton: canSubmit,
             onPressed: canSubmit
                 ? () {
-                Navigator.pushNamed(context, AppRoutes.profileVitalScreen
-                );
+                    Navigator.pushNamed(context, AppRoutes.profileVitalScreen);
                   }
                 : null,
             child: Center(

@@ -31,7 +31,7 @@ class _ProfileVitalsState extends State<ProfileVitals> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: kToolbarHeight,
+        toolbarHeight: kToolbarHeight.h,
         centerTitle: true,
         title: Text(
           "Complete Your Profile",
@@ -153,7 +153,7 @@ class _ProfileVitalsState extends State<ProfileVitals> {
                 ? () {
                     if (_formKey.currentState!.validate()) {
                       Navigator.pushNamed(
-                          context, AppRoutes.profileVitalScreen);
+                          context, AppRoutes.profileWelcomeScreen);
                     }
                   }
                 : null,
