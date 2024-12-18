@@ -43,14 +43,22 @@ flutter:
 
   # Adding custom fonts.
   fonts:
-    - family: Poppins
+    - family: HelveticaNeue
       fonts:
-        - asset: assets/fonts/poppins/Poppins-Thin.ttf
-        - asset: assets/fonts/poppins/Poppins-ExtraLight.ttf
-        - asset: assets/fonts/poppins/Poppins-Light.ttf
-        - asset: assets/fonts/poppins/Poppins-Regular.ttf
-        - asset: assets/fonts/poppins/Poppins-Medium.ttf
-        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
-        - asset: assets/fonts/poppins/Poppins-Bold.ttf
-        - asset: assets/fonts/poppins/Poppins-ExtraBold.ttf
-        - asset: assets/fonts/poppins/Poppins-Black.ttf
+        - asset: assets/fonts/helvetica/HelveticaNeueBlackItalic.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueBlack.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueBoldItalic.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueBold.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueHeavyItalic.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueHeavy.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueItalic.ttf
+        - asset: assets/fonts/helvetica/HelveticaNeueLightItalic.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueLight.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueMediumItalic.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueMedium.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueRoman.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueThinItalic.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueThin.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueUltraLightItalic.otf
+        - asset: assets/fonts/helvetica/HelveticaNeueUltraLight.otf
+

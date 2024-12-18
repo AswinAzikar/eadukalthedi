@@ -18,7 +18,7 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  bool isAlreadyExist = true;
+  bool isAlreadyExist = false;
 
   void toggleLoginPage() {
     setState(() {
@@ -54,7 +54,6 @@ class _AuthScreenState extends State<AuthScreen> {
               ),
               gapLarge,
               CommonButton(
-                isAGradieantButton: true,
                 onPressed: () async {
                   //TODO : if user doesnot exist then navigate to create_profile
 
@@ -75,7 +74,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       isAlreadyExist
                           ? "Login with Google"
                           : "Continue with Google",
-                      style: context.poppinsRegular16,
+                      style: context.helveticaNeueRegular,
                     )
                   ],
                 ),
@@ -91,12 +90,13 @@ class _AuthScreenState extends State<AuthScreen> {
                           ? "Don't have an Account? "
                           : "Have an Account ? ",
                       style:
-                          context.poppinsRegular12.copyWith(color: greyBorder),
+                          context.helveticaNeueRegular12.copyWith(color: greyBorder),
                     ),
                     Text(
                       isAlreadyExist ? "Create one" : "Log In",
                       style:
-                          context.poppinsRegular12.copyWith(color: primalColor),
+                          context.helveticaNeueRegular12
+                          .copyWith(color: primalColor),
                     ),
                   ],
                 ),

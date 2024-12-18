@@ -1,4 +1,5 @@
 import 'package:eadukalthedi/utils/constants.dart';
+import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -6,17 +7,21 @@ class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       inputDecorationTheme: InputDecorationTheme(
-        fillColor: offwhite,
-        filled: true,
+        contentPadding: const EdgeInsets.symmetric(vertical: 0),
         hintStyle: TextStyle(
-          color: miniHeadingText.withOpacity(0.5),
-          fontSize: 17,
+          color: Colors.grey[400],
+          fontSize: 16,
         ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+        enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: borderStroke,
-            width: 2,
+            color: primalColor,
+            width: 1.5,
+          ),
+        ),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: primalColor,
+            width: 1.5,
           ),
         ),
       ),

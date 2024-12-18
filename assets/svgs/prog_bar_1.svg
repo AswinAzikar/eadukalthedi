@@ -1,26 +1,23 @@
-<svg width="210" height="20" viewBox="0 0 210 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="210" height="22" viewBox="0 0 210 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background rectangle -->
     <rect opacity="0.4" x="4" width="206" height="12" rx="6" fill="#EEEEEE" />
-    <g filter="url(#filter0_d_164_8472)">
+
+    <!-- Shadow applied with feDropShadow -->
+    <g filter="url(#shadow)">
         <path
-            d="M4 6C4 2.68629 6.68629 0 10 0H59C62.3137 0 65 2.68629 65 6V6C65 9.31371 62.3137 12 59 12H10C6.68629 12 4 9.31371 4 6V6Z"
-            fill="url(#paint0_linear_164_8472)" />
+            d="M4 6C4 2.68629 6.68629 0 10 0H59C62.3137 0 65 2.68629 65 6C65 9.31371 62.3137 12 59 12H10C6.68629 12 4 9.31371 4 6Z"
+            fill="url(#gradient)" />
     </g>
+
+    <!-- Definitions -->
     <defs>
-        <filter id="filter0_d_164_8472" x="0" y="0" width="69" height="20"
-            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feColorMatrix in="SourceAlpha" type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-            <feOffset dy="4" />
-            <feGaussianBlur stdDeviation="2" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_164_8472" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_8472"
-                result="shape" />
+        <!-- Drop shadow filter -->
+        <filter id="shadow" x="-4" y="-4" width="77" height="30" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="6" stdDeviation="2" flood-color="black" flood-opacity="0.25" />
         </filter>
-        <linearGradient id="paint0_linear_164_8472" x1="4" y1="6" x2="65" y2="6"
-            gradientUnits="userSpaceOnUse">
+
+        <!-- Gradient -->
+        <linearGradient id="gradient" x1="4" y1="6" x2="65" y2="6" gradientUnits="userSpaceOnUse">
             <stop offset="0.15" stop-color="#F35C5C" />
             <stop offset="0.79" stop-color="#F2D50F" />
         </linearGradient>

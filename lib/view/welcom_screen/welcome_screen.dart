@@ -24,12 +24,12 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   Text(
                     "Welcome to the Library",
-                    style: context.poppinsSemiBold26
+                    style: context.helveticaNeueSemiBold26
                         .copyWith(color: headingText, fontSize: 26.fSize),
                   ),
                   Text(
                     "Enter your Name for username",
-                    style: context.poppinsSemiBold12
+                    style: context.helveticaNeueRegular12
                         .copyWith(color: miniHeadingText, fontSize: 16.fSize),
                   ),
                   gapXL,
@@ -49,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
                           children: [
                             Text(
                               "Continue",
-                              style: context.poppinsRegular16.copyWith(
+                              style: context.helveticaNeueRegular.copyWith(
                                   color: offwhite, fontSize: 16.fSize),
                             )
                           ],

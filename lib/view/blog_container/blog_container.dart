@@ -29,7 +29,7 @@ class BlogContainer extends StatelessWidget {
           Text(
             "Please Start Writing Better Git Commits",
             maxLines: 2,
-            style: context.poppinsBold20
+            style: context.helveticaNeueBold20
                 .copyWith(color: Colors.black, fontSize: 20.fSize),
           ),
           gapLarge,
@@ -42,7 +42,7 @@ class BlogContainer extends StatelessWidget {
               ),
               Text(
                 "Travis Aaron Wagner",
-                style: context.poppinsRegular
+                style: context.helveticaNeueRegular12
                     .copyWith(fontSize: 12.fSize, color: mildGray),
                 // style: TextStyle(
                 //   fontSize: 12,
@@ -52,7 +52,7 @@ class BlogContainer extends StatelessWidget {
               Text(
                 "Jul 29, 2022",
 
-                style: context.poppinsRegular
+                style: context.helveticaNeueRegular12
                     .copyWith(color: mildGray, fontSize: 10.fSize),
                 // style: TextStyle(
                 //   fontSize: 10,
@@ -63,7 +63,7 @@ class BlogContainer extends StatelessWidget {
               Text(
                 "4 min. read",
 
-                style: context.poppinsRegular
+                style: context.helveticaNeueRegular12
                     .copyWith(color: mildGray, fontSize: 12.fSize),
                 // style: TextStyle(
                 //   color: mildGray,
