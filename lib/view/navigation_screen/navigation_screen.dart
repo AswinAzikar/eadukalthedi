@@ -1,3 +1,4 @@
+import 'package:animated_botton_navigation/animated_botton_navigation.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
@@ -29,36 +30,21 @@ class _NavigationScreenState extends State<NavigationScreen> {
         toolbarHeight: 0.1 * SizeUtils.width,
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: offwhite),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        buttonBackgroundColor: primalColor,
-        color: navBarColor,
-        backgroundColor: Colors.transparent,
-        items: <Widget>[
-          Icon(
-            Icons.home_outlined,
-            size: 30.h,
-            color: providerObj.selectedIndex == 0 ? Colors.white : Colors.black,
-          ),
-          Icon(
-            Icons.category_outlined,
-            size: 30.h,
-            color: providerObj.selectedIndex == 1 ? Colors.white : Colors.black,
-          ),
-          Icon(
-            Icons.bookmark_outline,
-            size: 30.h,
-            color: providerObj.selectedIndex == 2 ? Colors.white : Colors.black,
-          ),
-          Icon(
-            Icons.settings_outlined,
-            size: 30.h,
-            color: providerObj.selectedIndex == 3 ? Colors.white : Colors.black,
-          ),
+      bottomNavigationBar: AnimatedBottomNavigation(
+        icons: const [
+          Icons.home,
+          Icons.category,
+          Icons.bookmark,
+          Icons.settings,
         ],
-        onTap: (index) {
-          providerObj.selectPage(index);
+        currentIndex: providerObj.selectedIndex,
+        onTapChange: (p0) {
+          providerObj.selectPage(p0);
         },
+        selectedColor: primalColor,
       ),
+
+      // providerObj.selectPage(index);
       body: PageView(
         controller: providerObj.pageController,
         // ignore: prefer_const_literals_to_create_immutables

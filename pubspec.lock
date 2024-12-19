@@ -22,6 +22,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.11.0"
+  animated_botton_navigation:
+    dependency: "direct main"
+    description:
+      name: animated_botton_navigation
+      sha256: "4c8eb1c5d296c3f1e2144d9965a96ac71b02ee24b8577a3927aede6a86d9ba65"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.7"
   args:
     dependency: transitive
     description:
