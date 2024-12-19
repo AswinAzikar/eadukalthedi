@@ -6,11 +6,12 @@ class HomeScreenController with ChangeNotifier {
   // Function to get tab bar categories
   List<Widget> getCategoryTabs() {
     return const [
-      Tab(text: "Tab 1"),
-      Tab(text: "Tab 2"),
-      Tab(text: "Tab 3"),
-      Tab(text: "Tab 4"),
-      Tab(text: "Tab 5"),
+      Tab(text: "വിനായകാഷ്ടകം"),
+      Tab(text: "മണ്ണന്തലദേവീസ്തവം"),
+      Tab(text: "കാളീനാടകം"),
+      Tab(text: "ജനനീ നവരത്ന മഞ്ജരി"),
+      Tab(text: "ഭദ്രകാള്യഷ്ടകം"),
+      Tab(text: "ദേവീപ്രണാമദേവ്യഷ്ടകം"),
     ];
   }
 
@@ -20,9 +21,7 @@ class HomeScreenController with ChangeNotifier {
       // blog list
       SingleChildScrollView(
         child: Column(
-          spacing: paddingLarge,
           children: [
-            gapLarge,
             ...List.generate(
               6,
               (index) => const BlogContainer(),
@@ -41,7 +40,10 @@ class HomeScreenController with ChangeNotifier {
         child: Text("Content for Tab 4"),
       ),
       const Center(
-        child: Text("Content for Tab 5"),
+        child: Text("Content for Tab 15"),
+      ),
+      const Center(
+        child: Text("Content for Tab 6"),
       ),
     ];
   }

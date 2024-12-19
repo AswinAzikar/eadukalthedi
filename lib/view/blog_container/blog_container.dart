@@ -2,113 +2,112 @@ import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
+import 'package:eadukalthedi/view/blog_page/blog_page_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class BlogContainer extends StatelessWidget {
   const BlogContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final providerObj = Provider.of<BlogPageController>(context);
     return Container(
       width: double.maxFinite,
-      padding: EdgeInsets.symmetric(horizontal: 9.h, vertical: 13.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 13.h),
       decoration: BoxDecoration(
         color: pureWhite,
-        borderRadius: BorderRadius.circular(paddingLarge),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            spreadRadius: 1,
-            blurRadius: 3,
-            offset: const Offset(2, 3),
+        border: Border(
+          bottom: BorderSide(
+            color: mildGray,
+            width: 0.5,
           ),
-        ],
+        ),
       ),
       child: Column(
         children: [
-          Text(
-            "Please Start Writing Better Git Commits",
-            maxLines: 2,
-            style: context.helveticaNeueBold20
-                .copyWith(color: Colors.black, fontSize: 20.fSize),
-          ),
-          gapLarge,
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleAvatar(
                 backgroundImage: NetworkImage(profileImages.first),
-                radius: paddingLarge.h,
+                radius: SizeUtils.height * 0.02,
               ),
+              gap,
               Text(
-                "Travis Aaron Wagner",
+                "വിനായകാഷ്ടകം",
                 style: context.helveticaNeueRegular12
-                    .copyWith(fontSize: 12.fSize, color: mildGray),
-                // style: TextStyle(
-                //   fontSize: 12,
-                //   fontWeight: FontWeight.normal,
-                // ),
+                    .copyWith(fontSize: 12.fSize, color: textBlack),
               ),
+              gap,
               Text(
-                "Jul 29, 2022",
-
-                style: context.helveticaNeueRegular12
-                    .copyWith(color: mildGray, fontSize: 10.fSize),
-                // style: TextStyle(
-                //   fontSize: 10,
-                //   color: mildGray,
-                //   fontWeight: FontWeight.normal,
-                // ),
-              ),
-              Text(
-                "4 min. read",
-
+                "by",
                 style: context.helveticaNeueRegular12
                     .copyWith(color: mildGray, fontSize: 12.fSize),
-                // style: TextStyle(
-                //   color: mildGray,
-                //   fontSize: 11,
-                //   fontWeight: FontWeight.normal,
-                // ),
+              ),
+              gap,
+              Text(
+                "മധുകൃഷ്ണ",
+                style: context.helveticaNeueRegular12
+                    .copyWith(color: textBlack, fontSize: 16.fSize),
               ),
             ],
           ),
-          const Divider(),
+          gapLarge,
+          GestureDetector(
+            onTap: () {
+              // TODO navigation to blog page after api fetching its needs to be implmented in the controller
+              Navigator.pushNamed(context, AppRoutes.blogPageScreen);
+            },
+            child: Text(
+              "അഡിപിസിസിംഗ് ഐഡി ഓഫീഷ്യ ഓഫീഷ്യ നിസി ഉല്ലാംകോ സുന്ത് ഡോളോരെ ചില്ലം അഡിപിസിസിംഗ് സുന്ത് വെനിയം നോസ്ത്രുഡ് ഉല്ലാംകോ വെലിറ്റ് നോസ്ത്രുഡ് നോൺ കുൽപ്പ പാരിയാതൂർ ആലിക്വാ ഡോളോർ ഡോളോർ ഇപ്സം ഡോളോരെ സിന്‍റ് ഓഫീഷ്യ മൊല്ലിറ്റ് ലോറം അമെറ്റ് കൊമ്മോഡോ ലോറം ",
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: context.helveticaNeueBold20
+                  .copyWith(color: Colors.black, fontSize: 20.fSize),
+            ),
+          ),
+          gapLarge,
           const Text(
-            "I recently read a helpful article on Hashnode by Simon Egersand titled Write Git Commit Messages Your Colleagues Will Love, and it inspired me to dive a little deeper into understanding what makes a Git commit read a helpful article on Hashnode by Simon Egersand titled Write Git Commit Messages Your Colleagues Will Love, and it inspired me to dive a little deeper into understanding what makes a Git commit good or bad",
+            "ഐഡി ഓഫീഷ്യ ഓഫീഷ്യ നിസി ഉല്ലാംകോ സുന്ത് ഡോളോരെ ചില്ലം അഡിപിസിസിംഗ് സുന്ത് വെനിയം നോസ്ത്രുഡ് ഉല്ലാംകോ വെലിറ്റ് നോസ്ത്രുഡ് നോൺ കുൽപ്പ ",
             style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.normal,
             ),
-            maxLines: 6,
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
           gap,
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, AppRoutes.blogPageScreen);
-            },
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: padding.h, vertical: padding.h),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(padding),
-                        gradient: primaryGradient),
-                    child: const Center(
-                      child: Text(
-                        "Read more",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  const Text("1 d ago"),
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          providerObj.toggleFavoriteSelection();
+                        },
+                        icon: providerObj.isFavoriteSelected
+                            ? const Icon(
+                                Icons.favorite,
+                                color: Colors.red,
+                              )
+                            : const Icon(Icons.favorite_outline),
                       ),
-                    ),
+                      const Text("51"),
+                    ],
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.more_vert),
+              ),
+            ],
           ),
         ],
       ),

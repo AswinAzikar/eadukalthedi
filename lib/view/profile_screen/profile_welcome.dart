@@ -56,7 +56,11 @@ class ProfileWelcome extends StatelessWidget {
         padding: const EdgeInsets.all(paddingLarge),
         child: CommonButton(
             onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.navigationScreen);
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                AppRoutes.navigationScreen,
+                (route) => false,
+              );
             },
             isAGradieantButton: true,
             child: Center(
