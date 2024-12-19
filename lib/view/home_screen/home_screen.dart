@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: TabBarView(
                     children: List.generate(
-                      5,
+                      providerObj.getCategoryTabPages().length,
                       (index) => providerObj.getCategoryTabPages()[index],
                     ),
                   ),
