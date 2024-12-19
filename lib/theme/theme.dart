@@ -1,5 +1,4 @@
 import 'package:eadukalthedi/utils/constants.dart';
-import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

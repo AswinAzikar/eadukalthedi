@@ -12,47 +12,69 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final providerObj = Provider.of<HomeScreenController>(context);
 
-    return Scaffold(
-      body: DefaultTabController(
-        length: 5,
-        child: Padding(
-          padding: const EdgeInsets.only(
-              left: paddingLarge, right: paddingLarge, top: paddingLarge),
-          child: Column(
-            children: [
-              SizedBox(height: .02 * SizeUtils.height),
-              searchAndSort(),
-              SizedBox(height: .02 * SizeUtils.height),
-              TabBar(
-                overlayColor: WidgetStateProperty.resolveWith<Color?>(
-                  (states) {
-                    if (states.contains(WidgetState.pressed)) {
-                      return primalColor.withOpacity(.06);
-                    }
-                    return null;
-                  },
-                ),
-                splashBorderRadius:
-                    const BorderRadius.all(Radius.circular(paddingXL)),
-                tabAlignment: TabAlignment.start,
-                isScrollable: true,
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.grey,
-                indicatorColor: primalColor,
-                tabs: providerObj.getCategoryTabs(),
-              ),
-              Expanded(
-                child: TabBarView(
-                  children: List.generate(
-                    5,
-                    (index) => providerObj.getCategoryTabPages()[index],
+    return Stack(
+      children: [
+        Scaffold(
+          body: DefaultTabController(
+            length: 5,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  left: paddingLarge, right: paddingLarge, top: paddingLarge),
+              child: Column(
+                children: [
+                  SizedBox(height: .02 * SizeUtils.height),
+                  searchAndSort(),
+                  SizedBox(height: .02 * SizeUtils.height),
+                  TabBar(
+                    overlayColor: WidgetStateProperty.resolveWith<Color?>(
+                      (states) {
+                        if (states.contains(WidgetState.pressed)) {
+                          return primalColor.withOpacity(.06);
+                        }
+                        return null;
+                      },
+                    ),
+                    splashBorderRadius:
+                        const BorderRadius.all(Radius.circular(paddingXL)),
+                    tabAlignment: TabAlignment.start,
+                    isScrollable: true,
+                    labelColor: Colors.black,
+                    unselectedLabelColor: Colors.grey,
+                    indicatorColor: primalColor,
+                    tabs: providerObj.getCategoryTabs(),
                   ),
-                ),
+                  Expanded(
+                    child: TabBarView(
+                      children: List.generate(
+                        5,
+                        (index) => providerObj.getCategoryTabPages()[index],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
-      ),
+        Positioned(
+          right: paddingXL * 3 / 4,
+          bottom: SizeUtils.height * .08,
+          child: Container(
+            width: 70.h,
+            height: 70.h,
+            decoration: BoxDecoration(
+              boxShadow: constShadow,
+              gradient: primaryGradient,
+              shape: BoxShape.circle,
+            ),
+            child: Icon(
+              size: 40.h,
+              Icons.edit_square,
+              color: Colors.white,
+            ),
+          ),
+        )
+      ],
     );
   }
 

@@ -1,3 +1,4 @@
+import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/view/blog_container/blog_container.dart';
 import 'package:flutter/material.dart';
 
@@ -19,14 +20,15 @@ class HomeScreenController with ChangeNotifier {
       // blog list
       SingleChildScrollView(
         child: Column(
-    
-          children: List.generate(
-            6,
-            (index) => const Padding(
-              padding: EdgeInsets.only(bottom: 30),
-              child: BlogContainer(),
+          spacing: paddingLarge,
+          children: [
+            gapLarge,
+            ...List.generate(
+              6,
+              (index) => const BlogContainer(),
             ),
-          ),
+            gapXXL
+          ],
         ),
       ),
       const Center(

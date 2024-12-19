@@ -28,6 +28,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/Group 2610472.svg
   String get group2610472 => 'assets/svgs/Group 2610472.svg';
 
+  /// File path: assets/svgs/add_notes.svg
+  String get addNotes => 'assets/svgs/add_notes.svg';
+
   /// File path: assets/svgs/back button.svg
   String get backButton => 'assets/svgs/back button.svg';
 
@@ -49,6 +52,7 @@ class $AssetsSvgsGen {
   /// List of all assets
   List<String> get values => [
         group2610472,
+        addNotes,
         backButton,
         bulletIcon,
         google,

@@ -1,5 +1,4 @@
 import 'package:animated_botton_navigation/animated_botton_navigation.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/view/bookmark_screen/bookmark_screen.dart';

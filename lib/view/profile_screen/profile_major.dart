@@ -1,7 +1,5 @@
 import 'package:eadukalthedi/routes/app_routes.dart';
-import 'package:eadukalthedi/utils/log_utils.dart';
 import 'package:eadukalthedi/view/profile_screen/controller/textformfield_controllers.dart';
-import 'package:eadukalthedi/view/profile_screen/profile_vitals.dart';
 import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,7 +7,6 @@ import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/gen/assets.gen.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
-import 'package:logger/logger.dart';
 
 class ProfileMajor extends StatefulWidget {
   const ProfileMajor({super.key});
