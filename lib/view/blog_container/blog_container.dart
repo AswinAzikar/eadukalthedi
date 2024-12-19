@@ -92,11 +92,11 @@ class BlogContainer extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    height: 35,
+                    padding: EdgeInsets.symmetric(
+                        horizontal: padding.h, vertical: padding.h),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: primalColor,
-                    ),
+                        borderRadius: BorderRadius.circular(padding),
+                        gradient: primaryGradient),
                     child: const Center(
                       child: Text(
                         "Read more",

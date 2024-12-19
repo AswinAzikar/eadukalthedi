@@ -1,7 +1,6 @@
 import 'package:eadukalthedi/view/blog_container/blog_container.dart';
 import 'package:flutter/material.dart';
 
-
 class HomeScreenController with ChangeNotifier {
   // Function to get tab bar categories
   List<Widget> getCategoryTabs() {
@@ -20,11 +19,11 @@ class HomeScreenController with ChangeNotifier {
       // blog list
       SingleChildScrollView(
         child: Column(
-          // blog Container
+    
           children: List.generate(
             6,
             (index) => const Padding(
-              padding: EdgeInsets.only(top: 15),
+              padding: EdgeInsets.only(bottom: 30),
               child: BlogContainer(),
             ),
           ),
@@ -44,5 +43,4 @@ class HomeScreenController with ChangeNotifier {
       ),
     ];
   }
-
 }

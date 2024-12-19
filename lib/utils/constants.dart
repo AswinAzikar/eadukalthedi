@@ -30,7 +30,7 @@ LinearGradient primaryGradient = const LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
 );
-Color primalColor = const Color(0xffCC971C);
+Color primalColor = const Color(0xFFFA9A35);
 Color offwhite = const Color(0xffF5F7F8);
 Color pureWhite = const Color(0xffFFFFFF);
 Color headingText = const Color(0xff000000);
