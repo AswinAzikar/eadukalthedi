@@ -6,7 +6,7 @@ import 'package:eadukalthedi/view/special_category_screen/special_category_scree
 import 'package:eadukalthedi/view/home_screen/home_screen.dart';
 import 'package:eadukalthedi/view/navigation_screen/navigation_screen_controller.dart';
 import 'package:eadukalthedi/view/search_screen/search_screen.dart';
-import 'package:eadukalthedi/view/setting_screen/setting_screen.dart';
+import 'package:eadukalthedi/view/user_profile_screen/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -48,13 +48,12 @@ class _NavigationScreenState extends State<NavigationScreen> {
       // providerObj.selectPage(index);
       body: PageView(
         controller: providerObj.pageController,
-        // ignore: prefer_const_literals_to_create_immutables
         children: const [
           HomeScreen(),
           SearchScreen(),
           SpecialCategoryScreen(),
           BookMarkScreen(),
-          SettingScreen(),
+          ProfileScreen(),
         ],
         onPageChanged: (value) {
           providerObj.selectPage(value);
