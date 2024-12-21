@@ -7,47 +7,37 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Search Screen"),
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: SizeUtils.width * 0.03),
+        child: Column(
+          children: [
+
+            // search bar
+            TextFormField(
+              decoration: InputDecoration(
+                fillColor: const Color(0xffF6F7F8),
+                filled: true,
+                hintText: 'Search',
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: textGreyLight.withValues(alpha: 0.3),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide:
+                      BorderSide(color: textGreyLight.withValues(alpha: 0.1)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide:
+                      BorderSide(color: textGreyLight.withValues(alpha: 0.1)),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
-}
-
-// search and sort
-Row searchAndSort() {
-  return Row(
-    children: [
-      Expanded(
-        child: TextFormField(
-          decoration: InputDecoration(
-            fillColor: pureWhite,
-            filled: true,
-            hintText: "Search here",
-            suffixIcon: Icon(
-              Icons.search,
-              size: 0.07 * SizeUtils.width,
-              color: mildGray,
-            ),
-            border: OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.circular(padding),
-            ),
-          ),
-        ),
-      ),
-      gap,
-      Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(padding),
-          color: pureWhite,
-        ),
-        child: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.sort),
-        ),
-      ),
-    ],
-  );
 }
