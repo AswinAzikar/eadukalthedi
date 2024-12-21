@@ -36,7 +36,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
           Icons.search,
           Icons.category,
           Icons.bookmark,
-          Icons.settings,
+          Icons.person,
         ],
         currentIndex: providerObj.selectedIndex,
         onTapChange: (p0) {
