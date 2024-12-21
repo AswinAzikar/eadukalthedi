@@ -2,7 +2,7 @@ import 'package:animated_botton_navigation/animated_botton_navigation.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/view/bookmark_screen/bookmark_screen.dart';
-import 'package:eadukalthedi/view/category_screen/category_screen.dart';
+import 'package:eadukalthedi/view/special_category_screen/special_category_screen.dart';
 import 'package:eadukalthedi/view/home_screen/home_screen.dart';
 import 'package:eadukalthedi/view/navigation_screen/navigation_screen_controller.dart';
 import 'package:eadukalthedi/view/search_screen/search_screen.dart';
@@ -52,7 +52,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
         children: const [
           HomeScreen(),
           SearchScreen(),
-          CategoryScreen(),
+          SpecialCategoryScreen(),
           BookMarkScreen(),
           SettingScreen(),
         ],

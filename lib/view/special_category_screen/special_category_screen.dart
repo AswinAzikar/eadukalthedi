@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CategoryScreen extends StatelessWidget {
-  const CategoryScreen({super.key});
+class SpecialCategoryScreen extends StatelessWidget {
+  const SpecialCategoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
