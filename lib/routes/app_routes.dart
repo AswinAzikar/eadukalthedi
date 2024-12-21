@@ -4,6 +4,7 @@ import 'package:eadukalthedi/view/navigation_screen/navigation_screen.dart';
 import 'package:eadukalthedi/view/profile_screen/profile_major.dart';
 import 'package:eadukalthedi/view/profile_screen/profile_vitals.dart';
 import 'package:eadukalthedi/view/profile_screen/profile_welcome.dart';
+import 'package:eadukalthedi/view/special_category_content_screen/special_category_content_screen.dart';
 import 'package:eadukalthedi/view/splash_screen/splash_screen.dart';
 import 'package:eadukalthedi/view/welcom_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,8 @@ class AppRoutes {
   static const String welcomeScreen = "/WelcomeScreen";
   static const String blogPageScreen = "/BlogPage";
   static const String navigationScreen = "/NavScreen";
+  static const String specialCategoryContentScreen =
+      "/SpecialCategoryContentScreen";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -45,6 +48,10 @@ class AppRoutes {
 
       case blogPageScreen:
         return MaterialPageRoute(builder: (_) => const BlogPage());
+
+      case specialCategoryContentScreen:
+        return MaterialPageRoute(
+            builder: (_) => const SpecialCategoryContentScreen());
 
       default:
         return MaterialPageRoute(
