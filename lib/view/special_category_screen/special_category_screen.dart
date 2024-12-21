@@ -21,8 +21,7 @@ class SpecialCategoryScreen extends StatelessWidget {
               (index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(
-                        context, AppRoutes.specialCategoryContentScreen);
+                    Navigator.pushNamed(context, AppRoutes.specialCategoryContentScreen);
                   },
                   child: Container(
                     height: SizeUtils.height * 0.08,
