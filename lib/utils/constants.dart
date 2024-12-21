@@ -50,6 +50,8 @@ Color navBarColor = const Color(0xffFfffff);
 Color mildGray = const Color(0xffC8C8C8);
 Color inactiveGray = mildGray;
 Color textBlack = const Color(0xff000000);
+Color textYellow = const Color(0xffCC971C);
+Color textGreyLight = const Color(0xff05070B).withValues(alpha: 0.90);
 
 // colors of the border
 Color borderStroke = const Color(0xffCCC9C9);

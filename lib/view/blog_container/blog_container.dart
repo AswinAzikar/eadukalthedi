@@ -35,18 +35,6 @@ class BlogContainer extends StatelessWidget {
               ),
               gap,
               Text(
-                "വിനായകാഷ്ടകം",
-                style: context.helveticaNeueRegular12
-                    .copyWith(fontSize: 12.fSize, color: textBlack),
-              ),
-              gap,
-              Text(
-                "by",
-                style: context.helveticaNeueRegular12
-                    .copyWith(color: mildGray, fontSize: 12.fSize),
-              ),
-              gap,
-              Text(
                 "മധുകൃഷ്ണ",
                 style: context.helveticaNeueRegular12
                     .copyWith(color: textBlack, fontSize: 16.fSize),
@@ -65,7 +53,7 @@ class BlogContainer extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: context.helveticaNeueBold20
-                  .copyWith(color: Colors.black, fontSize: 20.fSize),
+                  .copyWith(color: Colors.black, fontSize: 24.fSize),
             ),
           ),
           gapLarge,
