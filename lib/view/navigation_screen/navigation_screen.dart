@@ -28,40 +28,79 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
     return Scaffold(
       extendBody: true,
-
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 0.1 * SizeUtils.width,
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: offwhite),
       ),
-      bottomNavigationBar: AnimatedBottomNavigation(
-        bottonNavigationDecoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              spreadRadius: 1,
-            ),
-          ],
-        ),
+
+      bottomNavigationBar: BottomNavigationBar(
+     
+        enableFeedback: false,
+        backgroundColor: Colors.white,
+        fixedColor: primalColor,
+        type: BottomNavigationBarType.fixed,
         iconSize: 30.h,
-        height: 60.h,
-        icons: const [
-          LucideIcons.house,
-          LucideIcons.search,
-          LucideIcons.boxes,
-          LucideIcons.bookmark,
-          LucideIcons.userRound,
+        elevation: 20.h,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(LucideIcons.house), label: ''),
+          BottomNavigationBarItem(
+            icon: Icon(LucideIcons.search),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(LucideIcons.boxes),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(LucideIcons.bookmark),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(LucideIcons.userRound),
+            label: '',
+          ),
         ],
         currentIndex: providerObj.selectedIndex,
-        onTapChange: (p0) {
-          providerObj.selectPage(p0);
+        unselectedItemColor: Colors.grey,
+        onTap: (value) {
+          providerObj.selectPage(value);
         },
-        selectedColor: primalColor,
       ),
 
-      // providerObj.selectPage(index);
+      //     bottomNavigationBar: AnimatedBottomNavigation(
+      //       indicatorHeight: 0,
+      //       indicatorSpaceBotton: 20,
+      //       animationIconCurve: Curves.slowMiddle,
+      //       animationIndicatorCurve: Curves.easeInOut,
+      //       indicatorDecoration:
+      //           const BoxDecoration(color: Colors.orange, shape: BoxShape.circle),
+      //   bottonNavigationDecoration: BoxDecoration(
+      //     color: Colors.white,
+      //     boxShadow: [
+      //       BoxShadow(
+      //         color: Colors.black.withOpacity(0.1),
+      //         blurRadius: 10,
+      //         spreadRadius: 1,
+      //       ),
+      //     ],
+      //   ),
+      //   iconSize: 30.h,
+      //   height: 60.h,
+      //   icons: const [
+      //     LucideIcons.house,
+      //     LucideIcons.search,
+      //     LucideIcons.boxes,
+      //     LucideIcons.bookmark,
+      //     LucideIcons.userRound,
+      //   ],
+      //   currentIndex: providerObj.selectedIndex,
+      //   onTapChange: (p0) {
+      //     providerObj.selectPage(p0);
+      //   },
+      //   selectedColor: primalColor,
+      // ),
+
       body: PageView(
         controller: providerObj.pageController,
         children: const [
