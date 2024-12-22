@@ -17,12 +17,17 @@ class HomeScreen extends StatelessWidget {
       children: [
         Scaffold(
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             titleTextStyle: context.helveticaNeueRegular12.copyWith(
                 color: Colors.black,
                 fontSize: 34.fSize,
                 fontWeight: FontWeight.bold),
             toolbarHeight: SizeUtils.height * .08,
-            title: Text("Home"),
+            title: Text(
+              "Home",
+              style: context.helveticaNeueBlack22
+                  .copyWith(fontSize: 24.fSize, fontWeight: FontWeight.bold),
+            ),
           ),
           body: DefaultTabController(
             length: providerObj.getCategoryTabs().length,

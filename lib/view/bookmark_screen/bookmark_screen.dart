@@ -14,7 +14,7 @@ class BookMarkScreen extends StatelessWidget {
           children: List.generate(
             5,
             (index) {
-              return BlogContainer();
+              return const BlogContainer();
             },
           ),
         ),

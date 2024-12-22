@@ -27,6 +27,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       extendBody: true,
 
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 0.1 * SizeUtils.width,
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: offwhite),
       ),
