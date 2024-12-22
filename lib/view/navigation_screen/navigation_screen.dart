@@ -35,29 +35,47 @@ class _NavigationScreenState extends State<NavigationScreen> {
       ),
 
       bottomNavigationBar: BottomNavigationBar(
-     
+        unselectedFontSize: 1.fSize,
         enableFeedback: false,
         backgroundColor: Colors.white,
         fixedColor: primalColor,
         type: BottomNavigationBarType.fixed,
         iconSize: 30.h,
         elevation: 20.h,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(LucideIcons.house), label: ''),
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(LucideIcons.search),
+            icon: Padding(
+              padding: EdgeInsets.only(top: padding.h),
+              child: const Icon(LucideIcons.house),
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(LucideIcons.boxes),
+            icon: Padding(
+              padding: EdgeInsets.only(top: padding.h),
+              child: const Icon(LucideIcons.search),
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(LucideIcons.bookmark),
+            icon: Padding(
+              padding: EdgeInsets.only(top: padding.h),
+              child: const Icon(LucideIcons.boxes),
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(LucideIcons.userRound),
+            icon: Padding(
+              padding: EdgeInsets.only(top: padding.h),
+              child: const Icon(LucideIcons.bookmark),
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Padding(
+              padding: EdgeInsets.only(top: padding.h),
+              child: const Icon(LucideIcons.userRound),
+            ),
             label: '',
           ),
         ],

@@ -65,19 +65,24 @@ class HomeScreen extends StatelessWidget {
         ),
         Positioned(
           right: paddingXL * 3 / 4,
-          bottom: SizeUtils.height * .08,
-          child: Container(
-            width: 70.h,
-            height: 70.h,
-            decoration: BoxDecoration(
-              boxShadow: constShadow,
-              gradient: primaryGradient,
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              size: 40.h,
-              Icons.edit_square,
-              color: Colors.white,
+          bottom: SizeUtils.height * .085,
+          child: GestureDetector(
+            onTap: () {
+              
+            },
+            child: Container(
+              width: 60.h,
+              height: 60.h,
+              decoration: BoxDecoration(
+                boxShadow: constShadow,
+                gradient: primaryGradient,
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                size: 40.h,
+                Icons.edit_square,
+                color: Colors.white,
+              ),
             ),
           ),
         )
