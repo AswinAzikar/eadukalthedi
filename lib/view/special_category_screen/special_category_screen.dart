@@ -11,6 +11,7 @@ class SpecialCategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: SizeUtils.width * 0.04),
@@ -21,7 +22,8 @@ class SpecialCategoryScreen extends StatelessWidget {
               (index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, AppRoutes.specialCategoryContentScreen);
+                    Navigator.pushNamed(
+                        context, AppRoutes.specialCategoryContentScreen);
                   },
                   child: Container(
                     height: SizeUtils.height * 0.08,

@@ -1,3 +1,4 @@
+import 'package:eadukalthedi/view/add_blog/add_blog_page.dart';
 import 'package:eadukalthedi/view/auth_screen/auth_screen.dart';
 import 'package:eadukalthedi/view/blog_page/blog_page.dart';
 import 'package:eadukalthedi/view/navigation_screen/navigation_screen.dart';
@@ -21,9 +22,15 @@ class AppRoutes {
   static const String navigationScreen = "/NavScreen";
   static const String specialCategoryContentScreen =
       "/SpecialCategoryContentScreen";
+  static const String addBlogPage = "/AddBlogPage";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case addBlogPage:
+        return PageTransition(
+            child: const AddBlogPage(),
+            type: PageTransitionType.bottomToTop,
+            duration: Durations.medium1);
       case profileWelcomeScreen:
         return PageTransition(
             child: const ProfileWelcome(), type: PageTransitionType.fade);

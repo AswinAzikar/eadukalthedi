@@ -1,4 +1,5 @@
 import 'package:eadukalthedi/extensions/font_extensions.dart';
+import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 
@@ -12,6 +13,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final providerObj = Provider.of<HomeScreenController>(context);
+
+    const bool isAuthor = true;
 
     return Stack(
       children: [
@@ -68,7 +71,13 @@ class HomeScreen extends StatelessWidget {
           bottom: SizeUtils.height * .085,
           child: GestureDetector(
             onTap: () {
-              
+
+              if(isAuthor){
+
+Navigator.pushNamed(context, AppRoutes.addBlogPage);
+
+
+              }
             },
             child: Container(
               width: 60.h,

@@ -11,6 +11,7 @@ class CommonButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final bool isAGradieantButton;
   final bool isActive;
+  final BorderRadiusGeometry? borderRadius;
 
   const CommonButton({
     this.isActive = true,
@@ -21,6 +22,7 @@ class CommonButton extends StatelessWidget {
     this.isAGradieantButton = false,
     this.borderColor = Colors.transparent,
     this.onPressed,
+    this.borderRadius,
   });
 
   @override
@@ -34,11 +36,12 @@ class CommonButton extends StatelessWidget {
                   border: Border.all(color: borderColor ?? greyBorder),
                   color: color,
                   gradient: primaryGradient,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(
-                      paddingLarge.h,
-                    ),
-                  ),
+                  borderRadius: borderRadius ??
+                      BorderRadius.all(
+                        Radius.circular(
+                          paddingLarge.h,
+                        ),
+                      ),
                   boxShadow: elevated
                       ? [
                           BoxShadow(
@@ -52,11 +55,12 @@ class CommonButton extends StatelessWidget {
               : BoxDecoration(
                   border: Border.all(color: borderColor ?? greyBorder),
                   color: color,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(
-                      paddingLarge.h,
-                    ),
-                  ),
+                  borderRadius: borderRadius ??
+                      BorderRadius.all(
+                        Radius.circular(
+                          paddingLarge.h,
+                        ),
+                      ),
                   boxShadow: elevated
                       ? [
                           BoxShadow(
