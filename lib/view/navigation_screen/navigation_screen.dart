@@ -1,4 +1,5 @@
 import 'package:animated_botton_navigation/animated_botton_navigation.dart';
+import 'package:eadukalthedi/gen/assets.gen.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/view/bookmark_screen/bookmark_screen.dart';
@@ -9,6 +10,8 @@ import 'package:eadukalthedi/view/search_screen/search_screen.dart';
 import 'package:eadukalthedi/view/user_profile_screen/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:provider/provider.dart';
 
 class NavigationScreen extends StatefulWidget {
@@ -32,12 +35,24 @@ class _NavigationScreenState extends State<NavigationScreen> {
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: offwhite),
       ),
       bottomNavigationBar: AnimatedBottomNavigation(
+        bottonNavigationDecoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              spreadRadius: 1,
+            ),
+          ],
+        ),
+        iconSize: 30.h,
+        height: 60.h,
         icons: const [
-          Icons.home,
-          Icons.search,
-          Icons.category,
-          Icons.bookmark,
-          Icons.person,
+          LucideIcons.house,
+          LucideIcons.search,
+          LucideIcons.boxes,
+          LucideIcons.bookmark,
+          LucideIcons.userRound,
         ],
         currentIndex: providerObj.selectedIndex,
         onTapChange: (p0) {

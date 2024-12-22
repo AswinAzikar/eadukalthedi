@@ -27,6 +27,7 @@ dependencies:
   share_plus: ^10.1.2
   build_runner: ^2.4.14
   animated_botton_navigation: ^0.0.7
+  lucide_icons_flutter: ^1.2.5
 
 # Development dependencies for testing and linting.
 dev_dependencies:
