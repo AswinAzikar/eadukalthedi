@@ -1,9 +1,6 @@
 class ApiEndpoints {
   static const String baseUrl = "http://213.210.36.7/";
 
-  // Authentication
-  static const String authUser = "${baseUrl}api/users/login/";
-
   // User Management
   static const String editUserProfile = "${baseUrl}api/users/profile/:email/";
 
