@@ -14,8 +14,7 @@ class AuthorList extends StatelessWidget {
       padding: EdgeInsets.only(top: SizeUtils.height * 0.04),
       child: ListView.separated(
           itemBuilder: (context, index) => Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
@@ -35,16 +34,14 @@ class AuthorList extends StatelessWidget {
                     width: SizeUtils.width * 0.2,
                     height: SizeUtils.height * 0.05,
                     decoration: BoxDecoration(
-                      color: primalColor,
-                      borderRadius: BorderRadius.circular(12),
+                      gradient: primaryGradient,
+                      borderRadius: BorderRadius.circular(paddingLarge),
                     ),
                     child: Center(
                       child: Text(
                         "Follow",
                         style: context.helveticaNeueRegular12
-                            .copyWith(
-                                fontSize: 16.fSize,
-                                color: pureWhite),
+                            .copyWith(fontSize: 16.fSize, color: pureWhite),
                       ),
                     ),
                   ),
