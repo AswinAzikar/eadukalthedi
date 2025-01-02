@@ -2,6 +2,7 @@ import 'package:eadukalthedi/extensions/font_extensions.dart';
 import 'package:eadukalthedi/utils/constants.dart';
 import 'package:eadukalthedi/utils/log_utils.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
+import 'package:eadukalthedi/view/add_blog/controllers/controllers.dart';
 import 'package:eadukalthedi/widgets/common_buton.dart';
 import 'package:flutter/material.dart';
 
@@ -69,43 +70,60 @@ class _AddBlogPageState extends State<AddBlogPage> {
             gapLarge
           ],
         ),
-        body: Column(
-          children: [
-            Form(
-                child: Column(children: [
-              TextFormField(
-                
-
-                maxLength: 60,
-                style: const TextStyle(
-                  fontSize: 18,
-                  color: Colors.black54, 
-                ),
-                decoration: InputDecoration(
-                  hintText: 'നിങ്ങളുടെ ബ്ലോഗിന്റെ പേര്',
-                  hintStyle: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16,
+        body: Padding(
+          padding: EdgeInsets.all(paddingLarge.h),
+          child: Column(
+            children: [
+              Form(
+                  child: Column(children: [
+                TextFormField(
+                  controller: AddBlogController().titleController,
+                  maxLength: 60,
+                  style: TextStyle(
+                    fontSize: 18.fSize,
+                    color: Colors.black54,
                   ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide: const BorderSide(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(padding.h),
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    hoverColor: Colors.grey,
+                    hintText: ' നിങ്ങളുടെ ബ്ലോഗിന്റെ പേര്',
+                    hintStyle: TextStyle(
                       color: Colors.grey,
-                      width: 1.0,
+                      fontSize: 16.fSize,
                     ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide: const BorderSide(
-                      color: Colors.blue,
-                      width: 1.5,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(padding),
+                        borderSide: BorderSide.none
+
+                        // borderSide: const BorderSide(
+                        //   color: Colors.grey,
+                        //   width: 1.0,
+                        // ),
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(padding),
+                        borderSide:
+                            const BorderSide(color: Colors.grey, width: 1.0)),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(padding),
+                      borderSide: BorderSide(
+                        color: primalColor,
+                        width: 1.5,
+                      ),
                     ),
+                    counterText: '',
                   ),
-                  counterText: '', 
                 ),
-              ),
-            ]))
-          ],
+             
+             
+             
+             
+             
+              ]))
+            ],
+          ),
         ));
   }
 }

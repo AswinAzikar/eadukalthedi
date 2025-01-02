@@ -14,6 +14,7 @@ class SpecialCategoryContentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        surfaceTintColor: offwhite,
         toolbarHeight: 0.1 * SizeUtils.width,
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: offwhite),
       ),
