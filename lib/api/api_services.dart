@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:eadukalthedi/api/slugs.dart';
+import 'package:eadukalthedi/api/slugs/slugs.dart';
 import 'package:eadukalthedi/models/blog_model.dart';
 import 'package:eadukalthedi/utils/constants.dart'; // Import the Blog model
 
@@ -14,11 +14,6 @@ class ApiService {
       final response = await dio.get(ApiEndpoints.viewSpecialContent);
 
       if (response.statusCode == 200) {
-      
-
-
-
-      
         var blogsJson = response.data['blogs'] as List;
         return blogsJson.map((blogJson) => Blog.fromJson(blogJson)).toList();
       } else {

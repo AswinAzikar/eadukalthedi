@@ -1,5 +1,6 @@
 import 'package:eadukalthedi/routes/app_routes.dart';
 import 'package:eadukalthedi/theme/theme.dart';
+import 'package:eadukalthedi/utils/log_utils.dart';
 import 'package:eadukalthedi/utils/size_utils.dart';
 import 'package:eadukalthedi/view/blog_page/blog_page_controller.dart';
 import 'package:eadukalthedi/view/home_screen/home_screen_controller.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  logesh.e("main started");
   runApp(const MyApp());
 }
 
